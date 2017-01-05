@@ -99,9 +99,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                     print("User Email: \(email)")
                     ValoresGlobales.sharedInstance.userEmail = email as String
                 }
-                if let verified : CFBoolean = result.valueForKey("verified") as! CFBoolean {
+                if let verified : CFBoolean = (result.valueForKey("verified") as! CFBoolean) {
                     print("Verified: \(verified)")
                 }
+                
+                self.performSegueWithIdentifier("PasemosAlMapaMenu", sender: self)
             }
             print("Termina Call back")
         })

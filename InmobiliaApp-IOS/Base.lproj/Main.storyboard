@@ -43,11 +43,30 @@
                     <connections>
                         <outlet property="ImageView" destination="WNO-zo-7mg" id="2xg-iH-gf0"/>
                         <outlet property="botonLogin" destination="Y2u-Li-oy0" id="hN8-Ou-Pf3"/>
+                        <segue destination="FKH-cb-RCb" kind="show" identifier="PasemosAlMapaMenu" id="Fwg-Wz-zpH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="342"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="noO-nv-PnM">
+            <objects>
+                <viewController id="FKH-cb-RCb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bn0-s3-kVh"/>
+                        <viewControllerLayoutGuide type="bottom" id="qzJ-Q0-lwf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HOA-O5-fcX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDg-Er-AXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817" y="342"/>
         </scene>
     </scenes>
 </document>
