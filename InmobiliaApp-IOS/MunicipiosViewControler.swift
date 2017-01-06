@@ -14,7 +14,8 @@ class MunicipiosViewControler: UIViewController, UITableViewDelegate, UITableVie
     
     var listaMunicipios : [String] = []
     
-    @IBOutlet var tableView: UITableView!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class MunicipiosViewControler: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Se seleccionó el municipio \(listaMunicipios[indexPath.row])")
         municipioSeleccionado = listaMunicipios[indexPath.row]
+        print("Clave del municipio seleccionado \(CatalogoEstadosMunicipios.sharedInstance.catalogoEdosMun[estadoSeleccionado]![municipioSeleccionado])")
         //self.performSegueWithIdentifier("PasemosACapturaDeDatosNumericos", sender: self)
     }
     

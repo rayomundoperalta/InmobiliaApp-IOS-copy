@@ -10,7 +10,7 @@ import UIKit
 
 class EstadosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     let estados = CatalogoEstadosMunicipios.sharedInstance.catalogoEdosMun.keys.sort(<)
     
