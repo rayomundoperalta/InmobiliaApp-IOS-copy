@@ -270,51 +270,97 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="dE1-ED-mNM" kind="relationship" relationship="rootViewController" id="3hF-mk-4Rs"/>
+                        <segue destination="4XQ-V5-AMN" kind="relationship" relationship="rootViewController" id="Cte-dE-kSF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cZ-lx-Zqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2440" y="18"/>
         </scene>
-        <!--Estados View Controller-->
-        <scene sceneID="A0d-9N-QWB">
+        <!--Estados-->
+        <scene sceneID="zbk-15-hwU">
             <objects>
-                <viewController id="dE1-ED-mNM" customClass="EstadosViewController" customModule="InmobiliaApp_IOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VEW-yD-dqx"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Bj-TB-OHV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="saB-H2-Gya">
+                <tableViewController id="4XQ-V5-AMN" customClass="EstadosTableViewController" customModule="InmobiliaApp_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pXM-AO-SNe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JvU-8c-O4Q">
-                                <rect key="frame" x="20" y="64" width="560" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="dE1-ED-mNM" id="deD-fv-ixi"/>
-                                    <outlet property="delegate" destination="dE1-ED-mNM" id="Tbx-NT-Sp8"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="JvU-8c-O4Q" firstAttribute="top" secondItem="VEW-yD-dqx" secondAttribute="bottom" id="4VB-Qq-o7t"/>
-                            <constraint firstItem="4Bj-TB-OHV" firstAttribute="top" secondItem="JvU-8c-O4Q" secondAttribute="bottom" id="8fu-c7-fz0"/>
-                            <constraint firstItem="JvU-8c-O4Q" firstAttribute="leading" secondItem="saB-H2-Gya" secondAttribute="leadingMargin" id="Rbi-cL-IAZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JvU-8c-O4Q" secondAttribute="trailing" id="zpL-sK-tEP"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Lbp-X2-8X0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="edoCell" id="7qh-dG-k6j" customClass="EstadosTableViewCell" customModule="InmobiliaApp_IOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7qh-dG-k6j" id="rey-Xb-4k6">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b31-3Q-9BR">
+                                            <rect key="frame" x="16" y="8" width="455" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="estado" destination="b31-3Q-9BR" id="tn4-x3-dMk"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4XQ-V5-AMN" id="JlZ-dY-EQj"/>
+                            <outlet property="delegate" destination="4XQ-V5-AMN" id="hAU-Yl-Pk7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Estados" id="K6q-Rq-h2W" userLabel="estados">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="Ceo-DS-nmq" userLabel="MenuButon"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="JvU-8c-O4Q" id="Ccz-ib-U2W"/>
-                        <segue destination="f6h-FJ-Dx0" kind="show" identifier="PasemosASelecciónDeMunicipios" id="cgj-fD-K30"/>
+                        <outlet property="menuButton" destination="Ceo-DS-nmq" id="bZL-VD-d2D"/>
+                        <segue destination="Czd-3e-AGP" kind="show" identifier="PasemosASelecciónDeMunicipios" id="Lpj-pR-d9U"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kQZ-QD-t15" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKd-kp-pTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3129" y="18"/>
+        </scene>
+        <!--Municipios-->
+        <scene sceneID="Eae-F7-Zx2">
+            <objects>
+                <tableViewController id="Czd-3e-AGP" userLabel="Municipios" customClass="MunicipiosTableViewController" customModule="InmobiliaApp_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yyH-A2-njl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="munCell" id="eMW-pK-NQp" customClass="MunicipioTableViewCell" customModule="InmobiliaApp_IOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eMW-pK-NQp" id="nVb-qP-CpZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWj-Nh-Q7z">
+                                            <rect key="frame" x="17" y="11" width="566" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="municipio" destination="RWj-Nh-Q7z" id="trw-hg-U1i"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Czd-3e-AGP" id="iIs-q0-jPw"/>
+                            <outlet property="delegate" destination="Czd-3e-AGP" id="ZWj-BA-vm0"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBx-6w-Sy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3805" y="18"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ypB-6x-hzC">
@@ -347,7 +393,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lip-rm-2TN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lip-rm-2TN">
                                 <rect key="frame" x="20" y="64" width="560" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -365,12 +411,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="lip-rm-2TN" id="Zlm-Q6-0kp"/>
+                        <outlet property="tableView" destination="lip-rm-2TN" id="ccO-6e-s9K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKV-Mb-CDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3835" y="18"/>
+            <point key="canvasLocation" x="4562" y="18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QBu-ey-w3Y">

@@ -14,7 +14,6 @@ class MunicipiosViewControler: UIViewController, UITableViewDelegate, UITableVie
     
     var listaMunicipios : [String] = []
     
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
