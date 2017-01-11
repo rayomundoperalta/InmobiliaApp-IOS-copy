@@ -357,10 +357,100 @@
                             <outlet property="delegate" destination="Czd-3e-AGP" id="ZWj-BA-vm0"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Municipios" id="jO6-Df-BLR" userLabel="Municipios"/>
+                    <connections>
+                        <segue destination="SIC-g1-xlV" kind="show" identifier="PasemosACapturaDeDatosNumericos" id="gZC-Ff-2vJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBx-6w-Sy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3805" y="18"/>
+        </scene>
+        <!--Datos grales-->
+        <scene sceneID="Ts4-I1-PDq">
+            <objects>
+                <tableViewController id="SIC-g1-xlV" customClass="CapturaDatosNumericosTableViewController" customModule="InmobiliaApp_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eul-Rj-QbF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DGCell" id="dgV-RL-AbQ" customClass="CapturaDatosNumericosTableViewCell" customModule="InmobiliaApp_IOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dgV-RL-AbQ" id="moc-gn-qQI">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="zcm-dr-oYb" kind="show" id="WHV-Rr-uuc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SIC-g1-xlV" id="Kx4-MP-ISe"/>
+                            <outlet property="delegate" destination="SIC-g1-xlV" id="m3F-GF-6tl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Datos grales" id="WW0-Zn-Y0z"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cP6-ZE-Bxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4500" y="18"/>
+        </scene>
+        <!--ejemplo-->
+        <scene sceneID="jve-jR-sfC">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zcm-dr-oYb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uX7-0k-VHk"/>
+                        <viewControllerLayoutGuide type="bottom" id="btX-zR-Xfx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8sl-MW-U16">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B6F-St-rmR">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="84i-4b-ZNJ" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="0.0"/>
+                                        <color key="backgroundColor" red="0.66125463449999999" green="1" blue="0.57835955090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MmE-I6-JTm">
+                                        <rect key="frame" x="232" y="344" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GYr-18-Qys">
+                                        <rect key="frame" x="369" y="344" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="84i-4b-ZNJ" secondAttribute="trailing" id="5f2-aP-xzn"/>
+                                    <constraint firstItem="84i-4b-ZNJ" firstAttribute="top" secondItem="B6F-St-rmR" secondAttribute="top" id="IYE-ac-RUQ"/>
+                                    <constraint firstItem="84i-4b-ZNJ" firstAttribute="leading" secondItem="B6F-St-rmR" secondAttribute="leading" id="RbW-Lp-H8y"/>
+                                    <constraint firstItem="84i-4b-ZNJ" firstAttribute="centerX" secondItem="B6F-St-rmR" secondAttribute="centerX" id="XEu-3z-ae8"/>
+                                    <constraint firstItem="MmE-I6-JTm" firstAttribute="bottom" secondItem="GYr-18-Qys" secondAttribute="bottom" id="bfV-5h-aRf"/>
+                                    <constraint firstItem="MmE-I6-JTm" firstAttribute="top" secondItem="84i-4b-ZNJ" secondAttribute="top" id="u6r-Pr-Od5"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B6F-St-rmR" firstAttribute="leading" secondItem="8sl-MW-U16" secondAttribute="leadingMargin" id="GFH-KA-AlR"/>
+                            <constraint firstItem="B6F-St-rmR" firstAttribute="top" secondItem="uX7-0k-VHk" secondAttribute="bottom" id="vBF-aL-wd3"/>
+                            <constraint firstItem="B6F-St-rmR" firstAttribute="bottom" secondItem="btX-zR-Xfx" secondAttribute="top" id="wV4-mg-jGw"/>
+                            <constraint firstItem="B6F-St-rmR" firstAttribute="trailing" secondItem="8sl-MW-U16" secondAttribute="trailingMargin" id="xhj-YF-dEK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ejemplo" id="Ytm-yG-7pB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NW7-jd-5pY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5187" y="18"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ypB-6x-hzC">
@@ -380,43 +470,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9t-2P-mxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3129" y="872"/>
-        </scene>
-        <!--Municipios View Controler-->
-        <scene sceneID="1Je-WM-w1v">
-            <objects>
-                <viewController id="f6h-FJ-Dx0" customClass="MunicipiosViewControler" customModule="InmobiliaApp_IOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yTB-76-bvl"/>
-                        <viewControllerLayoutGuide type="bottom" id="RDw-RV-Yg6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sfV-wz-nNV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lip-rm-2TN">
-                                <rect key="frame" x="20" y="64" width="560" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="f6h-FJ-Dx0" id="VIZ-0x-G72"/>
-                                    <outlet property="delegate" destination="f6h-FJ-Dx0" id="jN5-be-bAb"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="RDw-RV-Yg6" firstAttribute="top" secondItem="lip-rm-2TN" secondAttribute="bottom" id="fk0-yj-vzo"/>
-                            <constraint firstItem="lip-rm-2TN" firstAttribute="leading" secondItem="sfV-wz-nNV" secondAttribute="leadingMargin" id="j7e-KF-M3j"/>
-                            <constraint firstItem="lip-rm-2TN" firstAttribute="top" secondItem="yTB-76-bvl" secondAttribute="bottom" id="lD8-JQ-BuA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lip-rm-2TN" secondAttribute="trailing" id="m7d-bK-AHp"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="lip-rm-2TN" id="ccO-6e-s9K"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fKV-Mb-CDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4562" y="18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QBu-ey-w3Y">

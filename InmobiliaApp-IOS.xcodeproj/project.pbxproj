@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2105D91C244B4A3F33DAA870 /* Pods_InmobiliaApp_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B892ACC004404371B11CA5 /* Pods_InmobiliaApp_IOS.framework */; };
 		7646C2881E13666700A92001 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7646C2841E13666700A92001 /* FBSDKShareKit.framework */; };
 		7646C2891E13666700A92001 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7646C2851E13666700A92001 /* Bolts.framework */; };
 		7646C28A1E13666700A92001 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7646C2861E13666700A92001 /* FBSDKCoreKit.framework */; };
@@ -18,11 +19,12 @@
 		7646E9171E133E3400FC4FB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7646E9161E133E3400FC4FB7 /* Assets.xcassets */; };
 		7646E91A1E133E3400FC4FB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7646E9181E133E3400FC4FB7 /* LaunchScreen.storyboard */; };
 		7646E9261E1347B200FC4FB7 /* CatalogoEstadosMunicipios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7646E9251E1347B200FC4FB7 /* CatalogoEstadosMunicipios.swift */; };
-		7646E92A1E13482700FC4FB7 /* MunicipiosViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7646E9291E13482700FC4FB7 /* MunicipiosViewControler.swift */; };
 		76760C5C1E1F49CB005F7204 /* EstadosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C5B1E1F49CB005F7204 /* EstadosTableViewController.swift */; };
 		76760C5E1E1F4F48005F7204 /* EstadosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C5D1E1F4F48005F7204 /* EstadosTableViewCell.swift */; };
 		76760C601E1F62B8005F7204 /* MunicipiosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C5F1E1F62B8005F7204 /* MunicipiosTableViewController.swift */; };
 		76760C621E1F664C005F7204 /* MunicipioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C611E1F664C005F7204 /* MunicipioTableViewCell.swift */; };
+		76760C641E201BBE005F7204 /* CapturaDatosNumericosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C631E201BBE005F7204 /* CapturaDatosNumericosTableViewController.swift */; };
+		76760C661E203106005F7204 /* CapturaDatosNumericosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C651E203106005F7204 /* CapturaDatosNumericosTableViewCell.swift */; };
 		7690BBD11E1DF52A000F4F77 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD01E1DF52A000F4F77 /* MenuController.swift */; };
 		7690BBD61E1EA9CE000F4F77 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD51E1EA9CE000F4F77 /* SWRevealViewController.m */; };
 		7690BBD81E1EB52C000F4F77 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD71E1EB52C000F4F77 /* MapController.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CF4830BA58D5466023A9E18 /* Pods-InmobiliaApp-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InmobiliaApp-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InmobiliaApp-IOS/Pods-InmobiliaApp-IOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4EFCD35A266708532FF40F94 /* Pods-InmobiliaApp-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InmobiliaApp-IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-InmobiliaApp-IOS/Pods-InmobiliaApp-IOS.release.xcconfig"; sourceTree = "<group>"; };
 		7646C2841E13666700A92001 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		7646C2851E13666700A92001 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		7646C2861E13666700A92001 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -44,12 +48,13 @@
 		7646E9191E133E3400FC4FB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7646E91B1E133E3400FC4FB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7646E9251E1347B200FC4FB7 /* CatalogoEstadosMunicipios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogoEstadosMunicipios.swift; sourceTree = "<group>"; };
-		7646E9291E13482700FC4FB7 /* MunicipiosViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunicipiosViewControler.swift; sourceTree = "<group>"; };
 		7646E93F1E13601C00FC4FB7 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		76760C5B1E1F49CB005F7204 /* EstadosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstadosTableViewController.swift; sourceTree = "<group>"; };
 		76760C5D1E1F4F48005F7204 /* EstadosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstadosTableViewCell.swift; sourceTree = "<group>"; };
 		76760C5F1E1F62B8005F7204 /* MunicipiosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunicipiosTableViewController.swift; sourceTree = "<group>"; };
 		76760C611E1F664C005F7204 /* MunicipioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunicipioTableViewCell.swift; sourceTree = "<group>"; };
+		76760C631E201BBE005F7204 /* CapturaDatosNumericosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturaDatosNumericosTableViewController.swift; sourceTree = "<group>"; };
+		76760C651E203106005F7204 /* CapturaDatosNumericosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturaDatosNumericosTableViewCell.swift; sourceTree = "<group>"; };
 		7690BBD01E1DF52A000F4F77 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		7690BBD31E1EA9CD000F4F77 /* InmobiliaApp-IOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InmobiliaApp-IOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		7690BBD41E1EA9CE000F4F77 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		7690BBD71E1EB52C000F4F77 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		7690BBD91E1EB81A000F4F77 /* ElPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElPin.swift; sourceTree = "<group>"; };
 		7690BBDB1E1EDFDA000F4F77 /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		D5B892ACC004404371B11CA5 /* Pods_InmobiliaApp_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InmobiliaApp_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +74,21 @@
 				7646C28A1E13666700A92001 /* FBSDKCoreKit.framework in Frameworks */,
 				7646C28B1E13666700A92001 /* FBSDKLoginKit.framework in Frameworks */,
 				7646C2891E13666700A92001 /* Bolts.framework in Frameworks */,
+				2105D91C244B4A3F33DAA870 /* Pods_InmobiliaApp_IOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1986DE4918E2A47C86B6FCC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5B892ACC004404371B11CA5 /* Pods_InmobiliaApp_IOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7646C2831E1364C100A92001 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +105,8 @@
 			children = (
 				7646E90E1E133E3400FC4FB7 /* InmobiliaApp-IOS */,
 				7646E90D1E133E3400FC4FB7 /* Products */,
+				E3C39882570ECFF7A5781A86 /* Pods */,
+				1986DE4918E2A47C86B6FCC4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,7 +131,6 @@
 				7646E9181E133E3400FC4FB7 /* LaunchScreen.storyboard */,
 				7646E91B1E133E3400FC4FB7 /* Info.plist */,
 				7646E9251E1347B200FC4FB7 /* CatalogoEstadosMunicipios.swift */,
-				7646E9291E13482700FC4FB7 /* MunicipiosViewControler.swift */,
 				7646C2831E1364C100A92001 /* Frameworks */,
 				7646C28C1E14424900A92001 /* ValoresGlobales.swift */,
 				7690BBD01E1DF52A000F4F77 /* MenuController.swift */,
@@ -124,6 +140,8 @@
 				76760C5D1E1F4F48005F7204 /* EstadosTableViewCell.swift */,
 				76760C5F1E1F62B8005F7204 /* MunicipiosTableViewController.swift */,
 				76760C611E1F664C005F7204 /* MunicipioTableViewCell.swift */,
+				76760C631E201BBE005F7204 /* CapturaDatosNumericosTableViewController.swift */,
+				76760C651E203106005F7204 /* CapturaDatosNumericosTableViewCell.swift */,
 			);
 			path = "InmobiliaApp-IOS";
 			sourceTree = "<group>";
@@ -138,6 +156,15 @@
 			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		E3C39882570ECFF7A5781A86 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CF4830BA58D5466023A9E18 /* Pods-InmobiliaApp-IOS.debug.xcconfig */,
+				4EFCD35A266708532FF40F94 /* Pods-InmobiliaApp-IOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7646E91E1E133E3400FC4FB7 /* Build configuration list for PBXNativeTarget "InmobiliaApp-IOS" */;
 			buildPhases = (
+				66324555D7A5CFF204CD3354 /* [CP] Check Pods Manifest.lock */,
 				7646E9081E133E3400FC4FB7 /* Sources */,
 				7646E9091E133E3400FC4FB7 /* Frameworks */,
 				7646E90A1E133E3400FC4FB7 /* Resources */,
+				AE0285052E2D92D5F8A58703 /* [CP] Embed Pods Frameworks */,
+				C682210C562620C6BEB8972A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +235,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		66324555D7A5CFF204CD3354 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AE0285052E2D92D5F8A58703 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InmobiliaApp-IOS/Pods-InmobiliaApp-IOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C682210C562620C6BEB8972A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InmobiliaApp-IOS/Pods-InmobiliaApp-IOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7646E9081E133E3400FC4FB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -215,13 +293,14 @@
 				76760C5C1E1F49CB005F7204 /* EstadosTableViewController.swift in Sources */,
 				7690BBD11E1DF52A000F4F77 /* MenuController.swift in Sources */,
 				7646C28D1E14424900A92001 /* ValoresGlobales.swift in Sources */,
+				76760C641E201BBE005F7204 /* CapturaDatosNumericosTableViewController.swift in Sources */,
 				76760C5E1E1F4F48005F7204 /* EstadosTableViewCell.swift in Sources */,
 				76760C601E1F62B8005F7204 /* MunicipiosTableViewController.swift in Sources */,
 				7690BBD61E1EA9CE000F4F77 /* SWRevealViewController.m in Sources */,
+				76760C661E203106005F7204 /* CapturaDatosNumericosTableViewCell.swift in Sources */,
 				7646E9101E133E3400FC4FB7 /* AppDelegate.swift in Sources */,
 				7690BBDC1E1EDFDA000F4F77 /* MapTableViewCell.swift in Sources */,
 				7646E9261E1347B200FC4FB7 /* CatalogoEstadosMunicipios.swift in Sources */,
-				7646E92A1E13482700FC4FB7 /* MunicipiosViewControler.swift in Sources */,
 				7690BBD81E1EB52C000F4F77 /* MapController.swift in Sources */,
 				76760C621E1F664C005F7204 /* MunicipioTableViewCell.swift in Sources */,
 			);
@@ -334,9 +413,11 @@
 		};
 		7646E91F1E133E3400FC4FB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CF4830BA58D5466023A9E18 /* Pods-InmobiliaApp-IOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InmobiliaApp-IOS",
@@ -352,9 +433,11 @@
 		};
 		7646E9201E133E3400FC4FB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EFCD35A266708532FF40F94 /* Pods-InmobiliaApp-IOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InmobiliaApp-IOS",
