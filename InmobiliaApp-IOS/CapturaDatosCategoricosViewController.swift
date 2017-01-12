@@ -8,12 +8,31 @@
 
 import UIKit
 
-class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var proximidadUrbanaPicker: UIPickerView!
     var proximidadUrbanaPickerData: [String] = [String]()
     var tipoInmueblePickerData: [String] = [String]()
     var claseInmueblePickerData: [String] = [String]()
+    
+    var imagePicker: UIImagePickerController!
+    
+    @IBOutlet weak var fotoPropiedad: UIImageView!
+    @IBAction func tomarFoto(sender: UIButton) {
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .Camera
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var reporteValorEstimado: UILabel!
+    @IBOutlet weak var latitud: UILabel!
+    @IBOutlet weak var longuitud: UILabel!
+    @IBAction func estimarValor(sender: UIButton) {
+    }
+    @IBAction func guardar(sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +40,7 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         self.proximidadUrbanaPicker.delegate   = self
         self.proximidadUrbanaPicker.dataSource = self
         proximidadUrbanaPickerData = ["Céntrica (1)", "Intermedia (2)", "Periférica (3)", "De expansión (4)", "Rural (5)"]
-        tipoInmueblePickerData = ["Terreno (1)", "Casa habitación (2)", "Casa Condominio (3)", "Departamento condominio (4)", "Casas multiples (5)", "Otros (6)"]
+        tipoInmueblePickerData = ["Terreno (1)", "Casa habitación (2)", "Casa Condominio (3)", "Depto condominio (4)", "Casas multiples (5)", "Otros (6)"]
         claseInmueblePickerData = ["Mínima (1)", "Económica (2)", "Interés Social (3)", "Medio (4)", "Semilujo (5)", "Residencial (6)", "Residencial plus (7)"]
     }
 
@@ -100,10 +119,15 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
             data = "error"
             break
         }
-        let title = NSAttributedString(string: data, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(8.0, weight: UIFontWeightRegular)])
+        let title = NSAttributedString(string: data, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(10.0, weight: UIFontWeightRegular)])
         label.attributedText = title
         label.textAlignment = .Center
         return label
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        fotoPropiedad.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
     
     /*
