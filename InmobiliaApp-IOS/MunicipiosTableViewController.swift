@@ -62,7 +62,7 @@ class MunicipiosTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "PasemosACapturaDeDatosNumericos" {
-            let controller = (segue.destinationViewController as! CapturaDatosNumericosTableViewController)
+            let controller = (segue.destinationViewController as! CapturaDeDatosNumericosViewController)
             controller.estadoSeleccionado = sender!.estadoSeleccionado
             controller.municipioSeleccionado = sender!.municipioSeleccionado
             controller.claveDeMunicipioSeleccionado = sender!.claveDeMunicipioSeleccionado

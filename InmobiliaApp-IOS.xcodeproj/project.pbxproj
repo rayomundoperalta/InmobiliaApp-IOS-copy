@@ -23,8 +23,8 @@
 		76760C5E1E1F4F48005F7204 /* EstadosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C5D1E1F4F48005F7204 /* EstadosTableViewCell.swift */; };
 		76760C601E1F62B8005F7204 /* MunicipiosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C5F1E1F62B8005F7204 /* MunicipiosTableViewController.swift */; };
 		76760C621E1F664C005F7204 /* MunicipioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C611E1F664C005F7204 /* MunicipioTableViewCell.swift */; };
-		76760C641E201BBE005F7204 /* CapturaDatosNumericosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C631E201BBE005F7204 /* CapturaDatosNumericosTableViewController.swift */; };
-		76760C661E203106005F7204 /* CapturaDatosNumericosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C651E203106005F7204 /* CapturaDatosNumericosTableViewCell.swift */; };
+		76760CD51E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760CD41E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift */; };
+		76760CD71E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760CD61E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift */; };
 		7690BBD11E1DF52A000F4F77 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD01E1DF52A000F4F77 /* MenuController.swift */; };
 		7690BBD61E1EA9CE000F4F77 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD51E1EA9CE000F4F77 /* SWRevealViewController.m */; };
 		7690BBD81E1EB52C000F4F77 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD71E1EB52C000F4F77 /* MapController.swift */; };
@@ -53,8 +53,8 @@
 		76760C5D1E1F4F48005F7204 /* EstadosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstadosTableViewCell.swift; sourceTree = "<group>"; };
 		76760C5F1E1F62B8005F7204 /* MunicipiosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunicipiosTableViewController.swift; sourceTree = "<group>"; };
 		76760C611E1F664C005F7204 /* MunicipioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunicipioTableViewCell.swift; sourceTree = "<group>"; };
-		76760C631E201BBE005F7204 /* CapturaDatosNumericosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturaDatosNumericosTableViewController.swift; sourceTree = "<group>"; };
-		76760C651E203106005F7204 /* CapturaDatosNumericosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturaDatosNumericosTableViewCell.swift; sourceTree = "<group>"; };
+		76760CD41E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturaDeDatosNumericosViewController.swift; sourceTree = "<group>"; };
+		76760CD61E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturaDatosCategoricosViewController.swift; sourceTree = "<group>"; };
 		7690BBD01E1DF52A000F4F77 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		7690BBD31E1EA9CD000F4F77 /* InmobiliaApp-IOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InmobiliaApp-IOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		7690BBD41E1EA9CE000F4F77 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 				76760C5D1E1F4F48005F7204 /* EstadosTableViewCell.swift */,
 				76760C5F1E1F62B8005F7204 /* MunicipiosTableViewController.swift */,
 				76760C611E1F664C005F7204 /* MunicipioTableViewCell.swift */,
-				76760C631E201BBE005F7204 /* CapturaDatosNumericosTableViewController.swift */,
-				76760C651E203106005F7204 /* CapturaDatosNumericosTableViewCell.swift */,
+				76760CD41E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift */,
+				76760CD61E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift */,
 			);
 			path = "InmobiliaApp-IOS";
 			sourceTree = "<group>";
@@ -293,15 +293,15 @@
 				76760C5C1E1F49CB005F7204 /* EstadosTableViewController.swift in Sources */,
 				7690BBD11E1DF52A000F4F77 /* MenuController.swift in Sources */,
 				7646C28D1E14424900A92001 /* ValoresGlobales.swift in Sources */,
-				76760C641E201BBE005F7204 /* CapturaDatosNumericosTableViewController.swift in Sources */,
 				76760C5E1E1F4F48005F7204 /* EstadosTableViewCell.swift in Sources */,
 				76760C601E1F62B8005F7204 /* MunicipiosTableViewController.swift in Sources */,
 				7690BBD61E1EA9CE000F4F77 /* SWRevealViewController.m in Sources */,
-				76760C661E203106005F7204 /* CapturaDatosNumericosTableViewCell.swift in Sources */,
+				76760CD71E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift in Sources */,
 				7646E9101E133E3400FC4FB7 /* AppDelegate.swift in Sources */,
 				7690BBDC1E1EDFDA000F4F77 /* MapTableViewCell.swift in Sources */,
 				7646E9261E1347B200FC4FB7 /* CatalogoEstadosMunicipios.swift in Sources */,
 				7690BBD81E1EB52C000F4F77 /* MapController.swift in Sources */,
+				76760CD51E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift in Sources */,
 				76760C621E1F664C005F7204 /* MunicipioTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
