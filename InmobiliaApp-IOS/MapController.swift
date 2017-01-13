@@ -21,12 +21,21 @@ class MapController: UITableViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
+        print("-----> Map Controller viewDidLoad <-----")
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        print(">>>>> MapController wil appear <<<<<")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.localizador!.stopUpdatingLocation()
+        print(">>>>> MapController will disappear <<<<<<")
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

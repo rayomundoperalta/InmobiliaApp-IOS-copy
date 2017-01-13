@@ -25,6 +25,7 @@
 		76760C621E1F664C005F7204 /* MunicipioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760C611E1F664C005F7204 /* MunicipioTableViewCell.swift */; };
 		76760CD51E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760CD41E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift */; };
 		76760CD71E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760CD61E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift */; };
+		76760CDA1E288F3B005F7204 /* Propiedades.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76760CD81E288F3B005F7204 /* Propiedades.xcdatamodeld */; };
 		7690BBD11E1DF52A000F4F77 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD01E1DF52A000F4F77 /* MenuController.swift */; };
 		7690BBD61E1EA9CE000F4F77 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD51E1EA9CE000F4F77 /* SWRevealViewController.m */; };
 		7690BBD81E1EB52C000F4F77 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD71E1EB52C000F4F77 /* MapController.swift */; };
@@ -55,6 +56,7 @@
 		76760C611E1F664C005F7204 /* MunicipioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunicipioTableViewCell.swift; sourceTree = "<group>"; };
 		76760CD41E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturaDeDatosNumericosViewController.swift; sourceTree = "<group>"; };
 		76760CD61E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturaDatosCategoricosViewController.swift; sourceTree = "<group>"; };
+		76760CD91E288F3B005F7204 /* Propiedades.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Propiedades.xcdatamodel; sourceTree = "<group>"; };
 		7690BBD01E1DF52A000F4F77 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		7690BBD31E1EA9CD000F4F77 /* InmobiliaApp-IOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InmobiliaApp-IOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		7690BBD41E1EA9CE000F4F77 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				76760C611E1F664C005F7204 /* MunicipioTableViewCell.swift */,
 				76760CD41E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift */,
 				76760CD61E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift */,
+				76760CD81E288F3B005F7204 /* Propiedades.xcdatamodeld */,
 			);
 			path = "InmobiliaApp-IOS";
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76760CDA1E288F3B005F7204 /* Propiedades.xcdatamodeld in Sources */,
 				7690BBDA1E1EB81A000F4F77 /* ElPin.swift in Sources */,
 				7646E9121E133E3400FC4FB7 /* ViewController.swift in Sources */,
 				76760C5C1E1F49CB005F7204 /* EstadosTableViewController.swift in Sources */,
@@ -472,6 +476,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		76760CD81E288F3B005F7204 /* Propiedades.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				76760CD91E288F3B005F7204 /* Propiedades.xcdatamodel */,
+			);
+			currentVersion = 76760CD91E288F3B005F7204 /* Propiedades.xcdatamodel */;
+			path = Propiedades.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7646E9041E133E3400FC4FB7 /* Project object */;
 }
