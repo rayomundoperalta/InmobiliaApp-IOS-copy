@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 7.0">
-    <elements/>
+    <entity name="Propiedades" representedClassName=".Propiedades" syncable="YES">
+        <attribute name="childPosition" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="claseInmueble" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cp" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="delegacion" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="direccion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="entidad" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="groupPosition" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="photoFileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="proximidadUrbana" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="revisadoManualmente" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sensibilidad" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="superConstruido" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="superTerreno" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="telefono" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipologia" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="valConcluido" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="valConst" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="valDesStn" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="valEstimado" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="vidaUtil" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Propiedades" positionX="-63" positionY="-18" width="128" height="375"/>
+    </elements>
 </model>

@@ -736,13 +736,13 @@
                         <outlet property="fotoPropiedad" destination="MSb-MR-Swo" id="cHl-kN-AgJ"/>
                         <outlet property="latitud" destination="jN5-BL-FN6" id="Yxh-TK-zOK"/>
                         <outlet property="longuitud" destination="IbW-VE-vDb" id="1Eq-aW-lQ4"/>
-                        <outlet property="proximidadUrbanaPicker" destination="Dzq-2Y-fRw" id="YmK-Mr-bYO"/>
+                        <outlet property="pickerView" destination="Dzq-2Y-fRw" id="80r-2S-3yc"/>
                         <outlet property="reporteValorEstimado" destination="kGz-m8-xqi" id="tMK-WX-36I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zD3-ux-ZpD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5193" y="18"/>
+            <point key="canvasLocation" x="5194" y="18"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ypB-6x-hzC">

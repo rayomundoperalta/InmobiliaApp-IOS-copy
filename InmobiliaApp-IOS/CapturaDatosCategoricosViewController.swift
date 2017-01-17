@@ -23,7 +23,7 @@ extension Double {
 
 class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
 
-    @IBOutlet weak var proximidadUrbanaPicker: UIPickerView!
+    @IBOutlet weak var pickerView: UIPickerView!
     var proximidadUrbanaPickerData: [String] = [String]()
     var tipoInmueblePickerData: [String] = [String]()
     var claseInmueblePickerData: [String] = [String]()
@@ -62,8 +62,8 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.proximidadUrbanaPicker.delegate   = self
-        self.proximidadUrbanaPicker.dataSource = self
+        self.pickerView.delegate   = self
+        self.pickerView.dataSource = self
         proximidadUrbanaPickerData = ["Céntrica (1)", "Intermedia (2)", "Periférica (3)", "De expansión (4)", "Rural (5)"]
         tipoInmueblePickerData = ["Terreno (1)", "Casa habitación (2)", "Casa Condominio (3)", "Depto condominio (4)", "Casas multiples (5)", "Otros (6)"]
         claseInmueblePickerData = ["Mínima (1)", "Económica (2)", "Interés Social (3)", "Medio (4)", "Semilujo (5)", "Residencial (6)", "Residencial plus (7)"]
@@ -111,12 +111,15 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         switch (component) {
         case 0:
             print(proximidadUrbanaPickerData[row])
+            ValoresGlobales.sharedInstance.proximidadUrbana = Double(row)
             break
         case 1:
             print(tipoInmueblePickerData[row])
+            ValoresGlobales.sharedInstance.tipoInmuebles = Double(row)
             break
         case 2:
             print(claseInmueblePickerData[row])
+            ValoresGlobales.sharedInstance.claseInmueble = Double(row)
             break
         default:
             print("error")
@@ -157,7 +160,7 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         
         print("Image size \(fotoPropiedad.image!.size)")
         
-        let filename = "foto1.jpg"
+        let filename = "foto" + NSUUID().UUIDString.lowercaseString + ".jpg"
         let subfolder = "Propiedades"
         
         do {
@@ -172,6 +175,7 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
             let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as String
             //let destinationPath = documentDirectoryPath.URLByAppendingPathComponent("contacts1.db")
             let fotoPath = documentDirectoryPath + "/Propiedades/" + filename
+            ValoresGlobales.sharedInstance.photoPath = fotoPath
             print("Paths: \(fotoPath)")
             UIImageJPEGRepresentation(fotoPropiedad.image!, 1.0)!.writeToFile(fotoPath, atomically: true)
             // Retrieve image from file
@@ -205,6 +209,8 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         let ubicacion = locations.last
         self.count += 1
         print ("self.count \(self.count)")
+        ValoresGlobales.sharedInstance.latitud = ubicacion!.coordinate.latitude
+        ValoresGlobales.sharedInstance.longitud = ubicacion!.coordinate.longitude
         print("Lat: " + "\(ubicacion!.coordinate.latitude)")
         print("Lon: " + "\(ubicacion!.coordinate.longitude)")
         latitud.font = UIFont(name: "Times New Roman", size: 18.0)
