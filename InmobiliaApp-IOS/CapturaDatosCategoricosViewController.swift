@@ -32,6 +32,9 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
     
     var localizador:CLLocationManager?
     
+    var datosRecibidos:NSMutableData?
+    var conexion:NSURLConnection?
+    
     @IBOutlet weak var fotoPropiedad: UIImageView!
     @IBAction func tomarFoto(sender: UIButton) {
         self.localizador = CLLocationManager()
@@ -54,8 +57,93 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
     @IBOutlet weak var reporteValorEstimado: UILabel!
     @IBOutlet weak var latitud: UILabel!
     @IBOutlet weak var longuitud: UILabel!
+    
+    @IBOutlet weak var btnEstimarValor: UIButton!
     @IBAction func estimarValor(sender: UIButton) {
+        print("pasamos por estimar valor")
+        if ConnectionManager.hayConexion() {
+            if !ConnectionManager.esConexionWiFi() {
+                // Si hay conexion, pero es celular, preguntar al usuario
+                // si quiere descargar el contenido
+                // ......
+            }
+            let VGSI = ValoresGlobales.sharedInstance
+            let s = VGSI.claveDeMunicipioSeleccionado
+            var entidad: String = "error"
+            switch (s.characters.count) {
+            case 4:
+                entidad = s[s.startIndex...s.startIndex.advancedBy(0)]
+                break
+            case 5:
+                entidad = s[s.startIndex...s.startIndex.advancedBy(1)]
+                break
+            default:
+                print("error en el tamaño de las claves de los catalogos")
+                break
+            }
+            print("claveDeMunicipioSeleccionado \(s)")
+            print("length - \(s.characters.count)")
+            print("\(entidad)")
+            //let subStr2 = s[s.startIndex.advancedBy(1)...s.startIndex.advancedBy(s.characters.count - 1)]
+            //print("\(subStr2)")
+            
+            let urlString = "http://peta.mx/avaluo.php?tipologia=\(VGSI.tipoInmuebles)&CP=\(VGSI.CP)&delegacion=\(VGSI.claveDeMunicipioSeleccionado)&entidad=\(entidad)&proximidadUrbana=\(VGSI.proximidadUrbana)&claseInmueble=\(VGSI.claseInmueble)&vidautil=\(VGSI.vidaUtil)&superTerreno=\(VGSI.superficieTerreno)&superConstruido=SuperficieConstruida)&valConst=\(VGSI.valorConstrucción)&valConcluido=\(VGSI.precio)&revisadoManualmente=\(VGSI.verificadoManualmente)&USER=rayo&PASSWORD=rayo&sensibilidad=\(VGSI.sensibilidad)"
+            print(urlString)
+            let laURL = NSURL(string: urlString)!
+            let elRequest = NSURLRequest(URL: laURL)
+            self.datosRecibidos = NSMutableData(capacity: 0)
+            self.conexion = NSURLConnection(request: elRequest, delegate: self)
+            
+            if self.conexion == nil {
+                self.datosRecibidos = nil
+                self.conexion = nil
+                print ("No se puede acceder al WS Avaluos")
+            }
+        }
+        else {
+            print ("no hay conexion a internet ")
+        }
     }
+    
+    
+    func connection(connection: NSURLConnection, didFailWithError error: NSError) {
+        print("connection didFailWithError")
+        self.datosRecibidos = nil
+        self.conexion = nil
+        print ("No se puede acceder al WS avaluos: Error del server")
+    }
+    
+    func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) { // Ya se logrò la conexion, preparando para recibir datos
+        print("connection didReciveResponse")
+        self.datosRecibidos?.length = 0
+    }
+    
+    func connection(connection: NSURLConnection, didReceiveData data: NSData) { // Se recibiò un paquete de datos. guardarlo con los demàs
+        print("connection didReceiveData")
+        self.datosRecibidos?.appendData(data)
+    }
+    
+    func connectionDidFinishLoading(connection: NSURLConnection){
+        print("connectionDidFinishLoading")
+        do {
+            let s = NSString(data: self.datosRecibidos!, encoding: NSUTF8StringEncoding)
+            print("\(s)")
+            let arregloRecibido = try NSJSONSerialization.JSONObjectWithData(self.datosRecibidos!, options: .AllowFragments)
+            print("\(arregloRecibido)")
+            let aux = arregloRecibido["avaluoValidoJsonResult"]!
+            print("\(aux!)")
+            let result = arregloRecibido["avaluoValidoJsonResult"] as! NSDictionary
+            print("valor estimado \(result["ValorEstimado"]!)")
+            let rango: Double = (Double(result["DesStn"] as! Int) / Double(result["ValorEstimado"] as! Int)) * 100.0
+            //reporteValorEstimado.text = "Valor estimado \(result["ValorEstimado"]!) +- \(rango)"
+            reporteValorEstimado.attributedText = NSAttributedString(string: "Valor estimado \(result["ValorEstimado"]!) +- \(round(rango))%", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
+            btnEstimarValor.enabled = false
+        }
+        catch {
+            print ("Error al recibir webservice de Estados")
+        }
+    }
+    
     @IBAction func guardar(sender: UIButton) {
     }
     
@@ -153,7 +241,6 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         return label
     }
     
-    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         fotoPropiedad.image = info[UIImagePickerControllerOriginalImage] as? UIImage
@@ -200,8 +287,6 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
     }
     
     var count: Int = 0
-    
-    
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         

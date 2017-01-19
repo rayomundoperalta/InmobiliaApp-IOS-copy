@@ -733,6 +733,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Datos Generales II" id="w3t-Tt-n9V"/>
                     <connections>
+                        <outlet property="btnEstimarValor" destination="lW7-QR-wHb" id="jyN-wx-J5D"/>
                         <outlet property="fotoPropiedad" destination="MSb-MR-Swo" id="cHl-kN-AgJ"/>
                         <outlet property="latitud" destination="jN5-BL-FN6" id="Yxh-TK-zOK"/>
                         <outlet property="longuitud" destination="IbW-VE-vDb" id="1Eq-aW-lQ4"/>

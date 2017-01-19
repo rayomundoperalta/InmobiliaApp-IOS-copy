@@ -38,7 +38,7 @@ class ValoresGlobales {
     var longitud: Double = 0.0
     
     var verificadoManualmente: Int = 0
-    var sensibilidad: Double = 0.0
+    var sensibilidad: Double = 4.0
     
     private init() { }
 }

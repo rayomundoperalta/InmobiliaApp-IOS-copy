@@ -27,6 +27,7 @@
 		76760CD71E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760CD61E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift */; };
 		76760CDA1E288F3B005F7204 /* Propiedades.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76760CD81E288F3B005F7204 /* Propiedades.xcdatamodeld */; };
 		76760CEA1E28A614005F7204 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760CE91E28A614005F7204 /* DataController.swift */; };
+		76760D101E309DC1005F7204 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D0F1E309DC1005F7204 /* ConnectionManager.swift */; };
 		7690BBD11E1DF52A000F4F77 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD01E1DF52A000F4F77 /* MenuController.swift */; };
 		7690BBD61E1EA9CE000F4F77 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD51E1EA9CE000F4F77 /* SWRevealViewController.m */; };
 		7690BBD81E1EB52C000F4F77 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD71E1EB52C000F4F77 /* MapController.swift */; };
@@ -59,6 +60,7 @@
 		76760CD61E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturaDatosCategoricosViewController.swift; sourceTree = "<group>"; };
 		76760CD91E288F3B005F7204 /* Propiedades.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Propiedades.xcdatamodel; sourceTree = "<group>"; };
 		76760CE91E28A614005F7204 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		76760D0F1E309DC1005F7204 /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		7690BBD01E1DF52A000F4F77 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		7690BBD31E1EA9CD000F4F77 /* InmobiliaApp-IOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InmobiliaApp-IOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		7690BBD41E1EA9CE000F4F77 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		7646E90E1E133E3400FC4FB7 /* InmobiliaApp-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				76760D0F1E309DC1005F7204 /* ConnectionManager.swift */,
 				7690BBD91E1EB81A000F4F77 /* ElPin.swift */,
 				7690BBD21E1EA991000F4F77 /* SWRevealViewController */,
 				7646E93F1E13601C00FC4FB7 /* Bridging-Header.h */,
@@ -307,6 +310,7 @@
 				76760CD71E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift in Sources */,
 				7646E9101E133E3400FC4FB7 /* AppDelegate.swift in Sources */,
 				7690BBDC1E1EDFDA000F4F77 /* MapTableViewCell.swift in Sources */,
+				76760D101E309DC1005F7204 /* ConnectionManager.swift in Sources */,
 				7646E9261E1347B200FC4FB7 /* CatalogoEstadosMunicipios.swift in Sources */,
 				7690BBD81E1EB52C000F4F77 /* MapController.swift in Sources */,
 				76760CD51E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift in Sources */,
