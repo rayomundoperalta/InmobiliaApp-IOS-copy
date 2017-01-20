@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 7.0">
+    <entity name="Estimaciones" representedClassName=".Estimaciones" syncable="YES">
+        <attribute name="estimaciones" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="EstimacionesCompradas" representedClassName=".EstimacionesCompradas" syncable="YES">
+        <attribute name="fechaCompra" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="payKey" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Propiedades" representedClassName=".Propiedades" syncable="YES">
-        <attribute name="childPosition" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="childPosition" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="claseInmueble" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="cp" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="delegacion" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="direccion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="entidad" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="groupPosition" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="groupPosition" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="photoFileName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="proximidadUrbana" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="revisadoManualmente" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="revisadoManualmente" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="sensibilidad" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="superConstruido" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="superTerreno" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -25,6 +35,8 @@
         <attribute name="vidaUtil" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Propiedades" positionX="-63" positionY="-18" width="128" height="375"/>
+        <element name="Propiedades" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="EstimacionesCompradas" positionX="-36" positionY="162" width="128" height="30"/>
+        <element name="Estimaciones" positionX="-9" positionY="171" width="128" height="30"/>
     </elements>
 </model>

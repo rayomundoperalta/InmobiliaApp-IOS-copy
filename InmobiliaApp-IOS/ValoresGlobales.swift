@@ -40,5 +40,8 @@ class ValoresGlobales {
     var verificadoManualmente: Int = 0
     var sensibilidad: Double = 4.0
     
+    var valorEstimado: Double = 0.0
+    var desStn: Double = 0.0
+    
     private init() { }
 }

@@ -193,7 +193,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAz-Kb-5QL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520" y="342"/>
+            <point key="canvasLocation" x="1756" y="342"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bbg-Ld-hMT">
@@ -734,11 +734,13 @@
                     <navigationItem key="navigationItem" title="Datos Generales II" id="w3t-Tt-n9V"/>
                     <connections>
                         <outlet property="btnEstimarValor" destination="lW7-QR-wHb" id="jyN-wx-J5D"/>
+                        <outlet property="btnGuardar" destination="w5a-4Y-hLu" id="7eh-5q-Mxs"/>
                         <outlet property="fotoPropiedad" destination="MSb-MR-Swo" id="cHl-kN-AgJ"/>
                         <outlet property="latitud" destination="jN5-BL-FN6" id="Yxh-TK-zOK"/>
                         <outlet property="longuitud" destination="IbW-VE-vDb" id="1Eq-aW-lQ4"/>
                         <outlet property="pickerView" destination="Dzq-2Y-fRw" id="80r-2S-3yc"/>
                         <outlet property="reporteValorEstimado" destination="kGz-m8-xqi" id="tMK-WX-36I"/>
+                        <segue destination="yZ7-GL-Oot" kind="show" identifier="pasemosAlMapa" id="gnN-sV-agM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zD3-ux-ZpD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -802,5 +804,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gkb-GN-X5F"/>
+        <segue reference="gnN-sV-agM"/>
     </inferredMetricsTieBreakers>
 </document>

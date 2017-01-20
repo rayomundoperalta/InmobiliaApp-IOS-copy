@@ -8,6 +8,18 @@
       location = "group:InmobiliaApp-IOS/Propiedades.swift">
    </FileRef>
    <FileRef
+      location = "group:InmobiliaApp-IOS/Estimaciones+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:InmobiliaApp-IOS/Estimaciones.swift">
+   </FileRef>
+   <FileRef
+      location = "group:InmobiliaApp-IOS/EstimacionesCompradas+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:InmobiliaApp-IOS/EstimacionesCompradas.swift">
+   </FileRef>
+   <FileRef
       location = "group:InmobiliaApp-IOS.xcodeproj">
    </FileRef>
    <FileRef

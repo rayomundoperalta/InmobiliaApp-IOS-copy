@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 extension Int {
     func format(formato: String) -> String {
@@ -125,16 +126,17 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
     
     func connectionDidFinishLoading(connection: NSURLConnection){
         print("connectionDidFinishLoading")
+        let VGSI = ValoresGlobales.sharedInstance
         do {
             let s = NSString(data: self.datosRecibidos!, encoding: NSUTF8StringEncoding)
             print("\(s)")
             let arregloRecibido = try NSJSONSerialization.JSONObjectWithData(self.datosRecibidos!, options: .AllowFragments)
             print("\(arregloRecibido)")
-            let aux = arregloRecibido["avaluoValidoJsonResult"]!
-            print("\(aux!)")
             let result = arregloRecibido["avaluoValidoJsonResult"] as! NSDictionary
             print("valor estimado \(result["ValorEstimado"]!)")
-            let rango: Double = (Double(result["DesStn"] as! Int) / Double(result["ValorEstimado"] as! Int)) * 100.0
+            VGSI.valorEstimado = Double(result["ValorEstimado"] as! Int)
+            VGSI.desStn = Double(result["DesStn"] as! Int)
+            let rango: Double = (VGSI.desStn / VGSI.valorEstimado) * 100.0
             //reporteValorEstimado.text = "Valor estimado \(result["ValorEstimado"]!) +- \(rango)"
             reporteValorEstimado.attributedText = NSAttributedString(string: "Valor estimado \(result["ValorEstimado"]!) +- \(round(rango))%", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
             btnEstimarValor.enabled = false
@@ -144,7 +146,62 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         }
     }
     
+    @IBOutlet weak var btnGuardar: UIButton!
     @IBAction func guardar(sender: UIButton) {
+        print("boton Guardar")
+        
+        let managedContext = CoreDataStack.sharedInstance.managedObjectContext
+        
+        let entity = NSEntityDescription.entityForName("Propiedades", inManagedObjectContext: managedContext)
+        
+        let propiedades = Propiedades(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        let VGSI = ValoresGlobales.sharedInstance
+        
+        let s = VGSI.claveDeMunicipioSeleccionado
+        var entidad: String = "error"
+        switch (s.characters.count) {
+        case 4:
+            entidad = s[s.startIndex...s.startIndex.advancedBy(0)]
+            break
+        case 5:
+            entidad = s[s.startIndex...s.startIndex.advancedBy(1)]
+            break
+        default:
+            print("error en el tamaño de las claves de los catalogos")
+            break
+        }
+        
+        propiedades.setValue(0, forKey: "childPosition")
+        propiedades.setValue(VGSI.claseInmueble, forKey: "claseInmueble")
+        propiedades.setValue((VGSI.CP as NSString).doubleValue, forKey: "cp")
+        propiedades.setValue((VGSI.claveDeMunicipioSeleccionado as NSString).doubleValue, forKey: "delegacion")
+        propiedades.setValue(VGSI.dirección, forKey: "direccion")
+        propiedades.setValue((entidad as NSString).doubleValue, forKey: "entidad")
+        propiedades.setValue(0, forKey: "groupPosition")
+        propiedades.setValue(NSUUID().UUIDString, forKey: "id")
+        propiedades.setValue(VGSI.latitud, forKey: "latitud")
+        propiedades.setValue(VGSI.longitud, forKey: "longitud")
+        propiedades.setValue(VGSI.photoPath, forKey: "photoFileName")
+        propiedades.setValue(VGSI.proximidadUrbana, forKey: "proximidadUrbana")
+        propiedades.setValue(VGSI.verificadoManualmente, forKey: "revisadoManualmente")
+        propiedades.setValue(VGSI.sensibilidad, forKey: "sensibilidad")
+        propiedades.setValue((VGSI.superficieConstruida as NSString).doubleValue, forKey: "superConstruido")
+        propiedades.setValue((VGSI.superficieTerreno as NSString).doubleValue, forKey: "superTerreno")
+        propiedades.setValue(VGSI.teléfono, forKey: "telefono")
+        propiedades.setValue(VGSI.tipoInmuebles, forKey: "tipologia")
+        propiedades.setValue((VGSI.precio as NSString).doubleValue, forKey: "valConcluido")
+        propiedades.setValue((VGSI.valorConstrucción as NSString).doubleValue, forKey: "valConst")
+        propiedades.setValue(VGSI.desStn, forKey: "valDesStn")
+        propiedades.setValue(VGSI.valorEstimado, forKey: "valEstimado")
+        propiedades.setValue((VGSI.vidaUtil as NSString).doubleValue, forKey: "vidaUtil")
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        btnGuardar.enabled = false
+        self.performSegueWithIdentifier("pasemosAlMapa", sender: self)
     }
     
     override func viewDidLoad() {
