@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:InmobiliaApp-IOS/Propiedades+CoreDataProperties.swift">
+      location = "group:Propiedades+CoreDataProperties.swift">
    </FileRef>
    <FileRef
-      location = "group:InmobiliaApp-IOS/Propiedades.swift">
+      location = "group:Propiedades.swift">
    </FileRef>
    <FileRef
       location = "group:InmobiliaApp-IOS/Estimaciones+CoreDataProperties.swift">

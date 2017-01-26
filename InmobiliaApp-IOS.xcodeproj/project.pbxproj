@@ -28,19 +28,30 @@
 		76760CDA1E288F3B005F7204 /* AvaluosDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76760CD81E288F3B005F7204 /* AvaluosDB.xcdatamodeld */; };
 		76760D101E309DC1005F7204 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D0F1E309DC1005F7204 /* ConnectionManager.swift */; };
 		76760D181E31565C005F7204 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D171E31565C005F7204 /* CoreDataStack.swift */; };
-		76760D1F1E318866005F7204 /* Propiedades+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D191E318866005F7204 /* Propiedades+CoreDataProperties.swift */; };
-		76760D201E318866005F7204 /* Propiedades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D1A1E318866005F7204 /* Propiedades.swift */; };
 		76760D211E318866005F7204 /* Estimaciones+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D1B1E318866005F7204 /* Estimaciones+CoreDataProperties.swift */; };
 		76760D221E318866005F7204 /* Estimaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D1C1E318866005F7204 /* Estimaciones.swift */; };
 		76760D231E318866005F7204 /* EstimacionesCompradas+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D1D1E318866005F7204 /* EstimacionesCompradas+CoreDataProperties.swift */; };
 		76760D241E318866005F7204 /* EstimacionesCompradas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D1E1E318866005F7204 /* EstimacionesCompradas.swift */; };
 		76760D261E33BE2B005F7204 /* PropiedadDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D251E33BE2A005F7204 /* PropiedadDetailButton.swift */; };
 		76760D2A1E33E408005F7204 /* PropertyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D291E33E408005F7204 /* PropertyDetailViewController.swift */; };
+		76760DA31E36DB81005F7204 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76760D9A1E36DB81005F7204 /* Accelerate.framework */; };
+		76760DA41E36DB81005F7204 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76760D9B1E36DB81005F7204 /* AudioToolbox.framework */; };
+		76760DA51E36DB81005F7204 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76760D9C1E36DB81005F7204 /* AVFoundation.framework */; };
+		76760DA61E36DB81005F7204 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76760D9D1E36DB81005F7204 /* CoreLocation.framework */; };
+		76760DA71E36DB81005F7204 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76760D9E1E36DB81005F7204 /* CoreMedia.framework */; };
+		76760DA81E36DB81005F7204 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76760D9F1E36DB81005F7204 /* MessageUI.framework */; };
+		76760DA91E36DB81005F7204 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76760DA01E36DB81005F7204 /* MobileCoreServices.framework */; };
+		76760DAA1E36DB81005F7204 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76760DA11E36DB81005F7204 /* SafariServices.framework */; };
+		76760DAB1E36DB81005F7204 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76760DA21E36DB81005F7204 /* SystemConfiguration.framework */; };
+		76760DAD1E36DD46005F7204 /* PayPalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760DAC1E36DD46005F7204 /* PayPalViewController.swift */; };
+		767C36F61E39C49C008136AB /* Propiedades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C36F51E39C49C008136AB /* Propiedades.swift */; };
+		767C36F81E39C4A3008136AB /* Propiedades+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C36F71E39C4A3008136AB /* Propiedades+CoreDataProperties.swift */; };
 		7690BBD11E1DF52A000F4F77 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD01E1DF52A000F4F77 /* MenuController.swift */; };
 		7690BBD61E1EA9CE000F4F77 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD51E1EA9CE000F4F77 /* SWRevealViewController.m */; };
 		7690BBD81E1EB52C000F4F77 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD71E1EB52C000F4F77 /* MapController.swift */; };
 		7690BBDA1E1EB81A000F4F77 /* ElPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD91E1EB81A000F4F77 /* ElPin.swift */; };
 		7690BBDC1E1EDFDA000F4F77 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBDB1E1EDFDA000F4F77 /* MapTableViewCell.swift */; };
+		76E743621E3723EA00E5FAC8 /* SalirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E743611E3723EA00E5FAC8 /* SalirViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +70,6 @@
 		7646E9191E133E3400FC4FB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7646E91B1E133E3400FC4FB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7646E9251E1347B200FC4FB7 /* CatalogoEstadosMunicipios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogoEstadosMunicipios.swift; sourceTree = "<group>"; };
-		7646E93F1E13601C00FC4FB7 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		76760C5B1E1F49CB005F7204 /* EstadosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstadosTableViewController.swift; sourceTree = "<group>"; };
 		76760C5D1E1F4F48005F7204 /* EstadosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstadosTableViewCell.swift; sourceTree = "<group>"; };
 		76760C5F1E1F62B8005F7204 /* MunicipiosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunicipiosTableViewController.swift; sourceTree = "<group>"; };
@@ -69,21 +79,33 @@
 		76760CD91E288F3B005F7204 /* AvaluosDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AvaluosDB.xcdatamodel; sourceTree = "<group>"; };
 		76760D0F1E309DC1005F7204 /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		76760D171E31565C005F7204 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		76760D191E318866005F7204 /* Propiedades+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Propiedades+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		76760D1A1E318866005F7204 /* Propiedades.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Propiedades.swift; sourceTree = "<group>"; };
 		76760D1B1E318866005F7204 /* Estimaciones+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Estimaciones+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		76760D1C1E318866005F7204 /* Estimaciones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estimaciones.swift; sourceTree = "<group>"; };
 		76760D1D1E318866005F7204 /* EstimacionesCompradas+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EstimacionesCompradas+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		76760D1E1E318866005F7204 /* EstimacionesCompradas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimacionesCompradas.swift; sourceTree = "<group>"; };
 		76760D251E33BE2A005F7204 /* PropiedadDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropiedadDetailButton.swift; sourceTree = "<group>"; };
 		76760D291E33E408005F7204 /* PropertyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyDetailViewController.swift; sourceTree = "<group>"; };
+		76760D981E36D314005F7204 /* InmobiliaApp-IOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InmobiliaApp-IOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		76760D991E36D8E2005F7204 /* ZZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZAppDelegate.h; sourceTree = "<group>"; };
+		76760D9A1E36DB81005F7204 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		76760D9B1E36DB81005F7204 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		76760D9C1E36DB81005F7204 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		76760D9D1E36DB81005F7204 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		76760D9E1E36DB81005F7204 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		76760D9F1E36DB81005F7204 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		76760DA01E36DB81005F7204 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		76760DA11E36DB81005F7204 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		76760DA21E36DB81005F7204 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		76760DAC1E36DD46005F7204 /* PayPalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayPalViewController.swift; sourceTree = "<group>"; };
+		767C36F51E39C49C008136AB /* Propiedades.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Propiedades.swift; sourceTree = "<group>"; };
+		767C36F71E39C4A3008136AB /* Propiedades+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Propiedades+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7690BBD01E1DF52A000F4F77 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
-		7690BBD31E1EA9CD000F4F77 /* InmobiliaApp-IOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InmobiliaApp-IOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		7690BBD41E1EA9CE000F4F77 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		7690BBD51E1EA9CE000F4F77 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		7690BBD71E1EB52C000F4F77 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		7690BBD91E1EB81A000F4F77 /* ElPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElPin.swift; sourceTree = "<group>"; };
 		7690BBDB1E1EDFDA000F4F77 /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		76E743611E3723EA00E5FAC8 /* SalirViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalirViewController.swift; sourceTree = "<group>"; };
 		D5B892ACC004404371B11CA5 /* Pods_InmobiliaApp_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InmobiliaApp_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +114,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76760DA31E36DB81005F7204 /* Accelerate.framework in Frameworks */,
+				76760DA41E36DB81005F7204 /* AudioToolbox.framework in Frameworks */,
+				76760DA51E36DB81005F7204 /* AVFoundation.framework in Frameworks */,
+				76760DA61E36DB81005F7204 /* CoreLocation.framework in Frameworks */,
+				76760DA71E36DB81005F7204 /* CoreMedia.framework in Frameworks */,
+				76760DA81E36DB81005F7204 /* MessageUI.framework in Frameworks */,
+				76760DA91E36DB81005F7204 /* MobileCoreServices.framework in Frameworks */,
+				76760DAA1E36DB81005F7204 /* SafariServices.framework in Frameworks */,
+				76760DAB1E36DB81005F7204 /* SystemConfiguration.framework in Frameworks */,
 				7646C2881E13666700A92001 /* FBSDKShareKit.framework in Frameworks */,
 				7646C28A1E13666700A92001 /* FBSDKCoreKit.framework in Frameworks */,
 				7646C28B1E13666700A92001 /* FBSDKLoginKit.framework in Frameworks */,
@@ -106,6 +137,15 @@
 		1986DE4918E2A47C86B6FCC4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76760D9A1E36DB81005F7204 /* Accelerate.framework */,
+				76760D9B1E36DB81005F7204 /* AudioToolbox.framework */,
+				76760D9C1E36DB81005F7204 /* AVFoundation.framework */,
+				76760D9D1E36DB81005F7204 /* CoreLocation.framework */,
+				76760D9E1E36DB81005F7204 /* CoreMedia.framework */,
+				76760D9F1E36DB81005F7204 /* MessageUI.framework */,
+				76760DA01E36DB81005F7204 /* MobileCoreServices.framework */,
+				76760DA11E36DB81005F7204 /* SafariServices.framework */,
+				76760DA21E36DB81005F7204 /* SystemConfiguration.framework */,
 				D5B892ACC004404371B11CA5 /* Pods_InmobiliaApp_IOS.framework */,
 			);
 			name = Frameworks;
@@ -143,8 +183,8 @@
 		7646E90E1E133E3400FC4FB7 /* InmobiliaApp-IOS */ = {
 			isa = PBXGroup;
 			children = (
-				76760D191E318866005F7204 /* Propiedades+CoreDataProperties.swift */,
-				76760D1A1E318866005F7204 /* Propiedades.swift */,
+				767C36F71E39C4A3008136AB /* Propiedades+CoreDataProperties.swift */,
+				767C36F51E39C49C008136AB /* Propiedades.swift */,
 				76760D1B1E318866005F7204 /* Estimaciones+CoreDataProperties.swift */,
 				76760D1C1E318866005F7204 /* Estimaciones.swift */,
 				76760D1D1E318866005F7204 /* EstimacionesCompradas+CoreDataProperties.swift */,
@@ -152,7 +192,6 @@
 				76760D0F1E309DC1005F7204 /* ConnectionManager.swift */,
 				7690BBD91E1EB81A000F4F77 /* ElPin.swift */,
 				7690BBD21E1EA991000F4F77 /* SWRevealViewController */,
-				7646E93F1E13601C00FC4FB7 /* Bridging-Header.h */,
 				7646E90F1E133E3400FC4FB7 /* AppDelegate.swift */,
 				7646E9111E133E3400FC4FB7 /* ViewController.swift */,
 				7646E9131E133E3400FC4FB7 /* Main.storyboard */,
@@ -166,6 +205,7 @@
 				7690BBD71E1EB52C000F4F77 /* MapController.swift */,
 				7690BBDB1E1EDFDA000F4F77 /* MapTableViewCell.swift */,
 				76760C5B1E1F49CB005F7204 /* EstadosTableViewController.swift */,
+				76760D981E36D314005F7204 /* InmobiliaApp-IOS-Bridging-Header.h */,
 				76760C5D1E1F4F48005F7204 /* EstadosTableViewCell.swift */,
 				76760C5F1E1F62B8005F7204 /* MunicipiosTableViewController.swift */,
 				76760C611E1F664C005F7204 /* MunicipioTableViewCell.swift */,
@@ -175,6 +215,9 @@
 				76760D171E31565C005F7204 /* CoreDataStack.swift */,
 				76760D251E33BE2A005F7204 /* PropiedadDetailButton.swift */,
 				76760D291E33E408005F7204 /* PropertyDetailViewController.swift */,
+				76760DAC1E36DD46005F7204 /* PayPalViewController.swift */,
+				76760D991E36D8E2005F7204 /* ZZAppDelegate.h */,
+				76E743611E3723EA00E5FAC8 /* SalirViewController.swift */,
 			);
 			path = "InmobiliaApp-IOS";
 			sourceTree = "<group>";
@@ -184,7 +227,6 @@
 			children = (
 				7690BBD41E1EA9CE000F4F77 /* SWRevealViewController.h */,
 				7690BBD51E1EA9CE000F4F77 /* SWRevealViewController.m */,
-				7690BBD31E1EA9CD000F4F77 /* InmobiliaApp-IOS-Bridging-Header.h */,
 			);
 			name = SWRevealViewController;
 			sourceTree = "<group>";
@@ -327,6 +369,7 @@
 				76760D181E31565C005F7204 /* CoreDataStack.swift in Sources */,
 				76760D211E318866005F7204 /* Estimaciones+CoreDataProperties.swift in Sources */,
 				76760C5C1E1F49CB005F7204 /* EstadosTableViewController.swift in Sources */,
+				76E743621E3723EA00E5FAC8 /* SalirViewController.swift in Sources */,
 				76760D2A1E33E408005F7204 /* PropertyDetailViewController.swift in Sources */,
 				7690BBD11E1DF52A000F4F77 /* MenuController.swift in Sources */,
 				76760D221E318866005F7204 /* Estimaciones.swift in Sources */,
@@ -337,11 +380,12 @@
 				7690BBD61E1EA9CE000F4F77 /* SWRevealViewController.m in Sources */,
 				76760CD71E2704F9005F7204 /* CapturaDatosCategoricosViewController.swift in Sources */,
 				7646E9101E133E3400FC4FB7 /* AppDelegate.swift in Sources */,
-				76760D201E318866005F7204 /* Propiedades.swift in Sources */,
-				76760D1F1E318866005F7204 /* Propiedades+CoreDataProperties.swift in Sources */,
 				7690BBDC1E1EDFDA000F4F77 /* MapTableViewCell.swift in Sources */,
+				76760DAD1E36DD46005F7204 /* PayPalViewController.swift in Sources */,
 				76760D101E309DC1005F7204 /* ConnectionManager.swift in Sources */,
+				767C36F61E39C49C008136AB /* Propiedades.swift in Sources */,
 				7646E9261E1347B200FC4FB7 /* CatalogoEstadosMunicipios.swift in Sources */,
+				767C36F81E39C4A3008136AB /* Propiedades+CoreDataProperties.swift in Sources */,
 				7690BBD81E1EB52C000F4F77 /* MapController.swift in Sources */,
 				76760D241E318866005F7204 /* EstimacionesCompradas.swift in Sources */,
 				76760CD51E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift in Sources */,

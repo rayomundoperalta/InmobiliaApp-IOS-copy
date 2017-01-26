@@ -2,7 +2,7 @@
 //  Propiedades+CoreDataProperties.swift
 //  
 //
-//  Created by Raymundo Peralta on 1/19/17.
+//  Created by Raymundo Peralta on 1/25/17.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,11 +14,14 @@ import CoreData
 
 extension Propiedades {
 
+    @NSManaged var childPosition: NSNumber?
     @NSManaged var claseInmueble: NSNumber?
     @NSManaged var cp: NSNumber?
     @NSManaged var delegacion: NSNumber?
     @NSManaged var direccion: String?
     @NSManaged var entidad: NSNumber?
+    @NSManaged var groupPosition: NSNumber?
+    @NSManaged var id: String?
     @NSManaged var latitud: NSNumber?
     @NSManaged var longitud: NSNumber?
     @NSManaged var photoFileName: String?
@@ -34,8 +37,10 @@ extension Propiedades {
     @NSManaged var valDesStn: NSNumber?
     @NSManaged var valEstimado: NSNumber?
     @NSManaged var vidaUtil: NSNumber?
-    @NSManaged var id: String?
-    @NSManaged var groupPosition: NSNumber?
-    @NSManaged var childPosition: NSNumber?
+    @NSManaged var nombreMunicipio: String?
+    @NSManaged var nombreEntidad: String?
+    @NSManaged var nombreProximidadUrbana: String?
+    @NSManaged var nombreTipologia: String?
+    @NSManaged var nombreClaseInmueble: String?
 
 }

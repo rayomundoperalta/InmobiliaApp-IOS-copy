@@ -20,6 +20,11 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="nombreClaseInmueble" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreEntidad" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreMunicipio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreProximidadUrbana" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreTipologia" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoFileName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="proximidadUrbana" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="revisadoManualmente" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -35,8 +40,8 @@
         <attribute name="vidaUtil" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Propiedades" positionX="-63" positionY="-18" width="128" height="28"/>
-        <element name="EstimacionesCompradas" positionX="-36" positionY="162" width="128" height="30"/>
         <element name="Estimaciones" positionX="-9" positionY="171" width="128" height="30"/>
+        <element name="EstimacionesCompradas" positionX="-36" positionY="162" width="128" height="30"/>
+        <element name="Propiedades" positionX="-63" positionY="-18" width="128" height="465"/>
     </elements>
 </model>

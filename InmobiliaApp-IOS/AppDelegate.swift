@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+        PayPalMobile.initializeWithClientIdsForEnvironments([PayPalEnvironmentProduction: "", PayPalEnvironmentSandbox:"AYRz-2lEDVmo0zNQ8PfEGWIgZ9Viy6zecQ6wa34n8hokGnDanjrljVQIk2yawFXzkgZcQmfAfIe-0a8N"])
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     

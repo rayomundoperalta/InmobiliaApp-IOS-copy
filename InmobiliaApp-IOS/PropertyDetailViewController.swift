@@ -59,9 +59,9 @@ class PropertyDetailViewController: UIViewController {
         imagenPropiedad.image = UIImage(contentsOfFile: (propiedad!.photoFileName)!)
         direccionLabel.text = propiedad!.direccion
         telefonoLabel.text = propiedad!.telefono
-        municipioLabel.text = "\(propiedad!.delegacion!)"
+        municipioLabel.text = "\(propiedad!.nombreMunicipio!)"
         CPLabel.text = "\(propiedad!.cp!)"
-        entidadLabel.text = "\(propiedad!.delegacion!)"
+        entidadLabel.text = "\(propiedad!.nombreEntidad!)"
         
         let formatter = NSNumberFormatter()
         formatter.numberStyle = .CurrencyStyle
@@ -74,9 +74,9 @@ class PropertyDetailViewController: UIViewController {
         superficieTerrenoLabel.text = "Terreno \(propiedad!.superTerreno!) m2"
         superficieConstruidaLabel.text = "Construcción \(propiedad!.superConstruido!) m2"
         valorConstruccionLabel.text = "Valor Const. " + formatter.stringFromNumber(propiedad!.valConst!)!
-        proximidadUrbanaLabel.text = "\(propiedad!.proximidadUrbana!)"
-        tipologiaLabel.text = "\(propiedad!.tipologia!)"
-        //claseInmuebleLabel.text = propiedad!.claseInmueble!
+        proximidadUrbanaLabel.text = "\(propiedad!.nombreProximidadUrbana!)"
+        tipologiaLabel.text = "\(propiedad!.nombreTipologia!)"
+        claseInmuebleLabel.text = propiedad!.nombreClaseInmueble!
         latitudLabel.text = "Lat \(propiedad!.latitud!)"
         longitudLabel.text = "Lon \(propiedad!.longitud!)"
         

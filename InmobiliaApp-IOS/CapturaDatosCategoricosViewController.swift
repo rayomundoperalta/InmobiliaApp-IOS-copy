@@ -23,6 +23,8 @@ extension Double {
 }
 
 class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
+    
+    let VGSI = ValoresGlobales.sharedInstance
 
     @IBOutlet weak var pickerView: UIPickerView!
     var proximidadUrbanaPickerData: [String] = [String]()
@@ -62,48 +64,41 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
     @IBOutlet weak var btnEstimarValor: UIButton!
     @IBAction func estimarValor(sender: UIButton) {
         print("pasamos por estimar valor")
-        if ConnectionManager.hayConexion() {
-            if !ConnectionManager.esConexionWiFi() {
-                // Si hay conexion, pero es celular, preguntar al usuario
-                // si quiere descargar el contenido
-                // ......
-            }
-            let VGSI = ValoresGlobales.sharedInstance
-            let s = VGSI.claveDeMunicipioSeleccionado
-            var entidad: String = "error"
-            switch (s.characters.count) {
-            case 4:
-                entidad = s[s.startIndex...s.startIndex.advancedBy(0)]
-                break
-            case 5:
-                entidad = s[s.startIndex...s.startIndex.advancedBy(1)]
-                break
-            default:
-                print("error en el tamaño de las claves de los catalogos")
-                break
-            }
-            print("claveDeMunicipioSeleccionado \(s)")
-            print("length - \(s.characters.count)")
-            print("\(entidad)")
-            //let subStr2 = s[s.startIndex.advancedBy(1)...s.startIndex.advancedBy(s.characters.count - 1)]
-            //print("\(subStr2)")
-            
-            let urlString = "http://peta.mx/avaluo.php?tipologia=\(VGSI.tipoInmuebles)&CP=\(VGSI.CP)&delegacion=\(VGSI.claveDeMunicipioSeleccionado)&entidad=\(entidad)&proximidadUrbana=\(VGSI.proximidadUrbana)&claseInmueble=\(VGSI.claseInmueble)&vidautil=\(VGSI.vidaUtil)&superTerreno=\(VGSI.superficieTerreno)&superConstruido=SuperficieConstruida)&valConst=\(VGSI.valorConstrucción)&valConcluido=\(VGSI.precio)&revisadoManualmente=\(VGSI.verificadoManualmente)&USER=rayo&PASSWORD=rayo&sensibilidad=\(VGSI.sensibilidad)"
-            print(urlString)
-            let laURL = NSURL(string: urlString)!
-            let elRequest = NSURLRequest(URL: laURL)
-            self.datosRecibidos = NSMutableData(capacity: 0)
-            self.conexion = NSURLConnection(request: elRequest, delegate: self)
-            
-            if self.conexion == nil {
-                self.datosRecibidos = nil
-                self.conexion = nil
-                print ("No se puede acceder al WS Avaluos")
-            }
+        reporteValorEstimado.attributedText = NSAttributedString(string: "Vamos a estimar el valor", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
+        
+        let s = VGSI.claveDeMunicipioSeleccionado
+        var entidad: String = "error"
+        switch (s.characters.count) {
+        case 4:
+            entidad = s[s.startIndex...s.startIndex.advancedBy(0)]
+            break
+        case 5:
+            entidad = s[s.startIndex...s.startIndex.advancedBy(1)]
+            break
+        default:
+            print("error en el tamaño de las claves de los catalogos")
+            break
         }
-        else {
-            print ("no hay conexion a internet ")
+        print("claveDeMunicipioSeleccionado \(s)")
+        print("length - \(s.characters.count)")
+        print("\(entidad)")
+        //let subStr2 = s[s.startIndex.advancedBy(1)...s.startIndex.advancedBy(s.characters.count - 1)]
+        //print("\(subStr2)")
+        
+        let urlString = "http://peta.mx/avaluo.php?tipologia=\(VGSI.tipoInmuebles)&CP=\(VGSI.CP)&delegacion=\(VGSI.claveDeMunicipioSeleccionado)&entidad=\(entidad)&proximidadUrbana=\(VGSI.proximidadUrbana)&claseInmueble=\(VGSI.claseInmueble)&vidautil=\(VGSI.vidaUtil)&superTerreno=\(VGSI.superficieTerreno)&superConstruido=SuperficieConstruida)&valConst=\(VGSI.valorConstrucción)&valConcluido=\(VGSI.precio)&revisadoManualmente=\(VGSI.verificadoManualmente)&USER=rayo&PASSWORD=rayo&sensibilidad=\(VGSI.sensibilidad)"
+        print(urlString)
+        let laURL = NSURL(string: urlString)!
+        let elRequest = NSURLRequest(URL: laURL)
+        self.datosRecibidos = NSMutableData(capacity: 0)
+        self.conexion = NSURLConnection(request: elRequest, delegate: self)
+            
+        if self.conexion == nil {
+            self.datosRecibidos = nil
+            self.conexion = nil
+            print ("No se puede acceder al WS Avaluos")
+            reporteValorEstimado.attributedText = NSAttributedString(string: "No se puede acceder al WS", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
         }
+        reporteValorEstimado.attributedText = NSAttributedString(string: "Petición enviada", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
     }
     
     
@@ -112,21 +107,24 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         self.datosRecibidos = nil
         self.conexion = nil
         print ("No se puede acceder al WS avaluos: Error del server")
+        reporteValorEstimado.attributedText = NSAttributedString(string: "No se puede acceder al WS: error del server", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
     }
     
     func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) { // Ya se logrò la conexion, preparando para recibir datos
         print("connection didReciveResponse")
+        reporteValorEstimado.attributedText = NSAttributedString(string: "Se recibio respuesta", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
         self.datosRecibidos?.length = 0
     }
     
     func connection(connection: NSURLConnection, didReceiveData data: NSData) { // Se recibiò un paquete de datos. guardarlo con los demàs
         print("connection didReceiveData")
+        reporteValorEstimado.attributedText = NSAttributedString(string: "Se recibieron datos", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
         self.datosRecibidos?.appendData(data)
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection){
         print("connectionDidFinishLoading")
-        let VGSI = ValoresGlobales.sharedInstance
+        
         do {
             let s = NSString(data: self.datosRecibidos!, encoding: NSUTF8StringEncoding)
             print("\(s)")
@@ -155,8 +153,6 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         let entity = NSEntityDescription.entityForName("Propiedades", inManagedObjectContext: managedContext)
         
         let propiedades = Propiedades(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        
-        let VGSI = ValoresGlobales.sharedInstance
         
         let s = VGSI.claveDeMunicipioSeleccionado
         var entidad: String = "error"
@@ -195,6 +191,11 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         propiedades.setValue(VGSI.desStn, forKey: "valDesStn")
         propiedades.setValue(VGSI.valorEstimado, forKey: "valEstimado")
         propiedades.setValue((VGSI.vidaUtil as NSString).doubleValue, forKey: "vidaUtil")
+        propiedades.setValue(VGSI.nombreClaseInmueble, forKey: "nombreClaseInmueble")
+        propiedades.setValue(VGSI.nombreTipologia, forKey: "nombreTipologia")
+        propiedades.setValue(VGSI.nombreProximidadUrbana, forKey: "nombreProximidadUrbana")
+        propiedades.setValue(VGSI.nombreMunicipio, forKey: "nombreMunicipio")
+        propiedades.setValue(VGSI.nombreEntidad, forKey: "nombreEntidad")
         do {
             try managedContext.save()
         } catch let error as NSError {
@@ -212,6 +213,13 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         proximidadUrbanaPickerData = ["Céntrica (1)", "Intermedia (2)", "Periférica (3)", "De expansión (4)", "Rural (5)"]
         tipoInmueblePickerData = ["Terreno (1)", "Casa habitación (2)", "Casa Condominio (3)", "Depto condominio (4)", "Casas multiples (5)", "Otros (6)"]
         claseInmueblePickerData = ["Mínima (1)", "Económica (2)", "Interés Social (3)", "Medio (4)", "Semilujo (5)", "Residencial (6)", "Residencial plus (7)"]
+        VGSI.nombreProximidadUrbana = proximidadUrbanaPickerData[0]
+        VGSI.nombreTipologia = tipoInmueblePickerData[0]
+        VGSI.nombreClaseInmueble = claseInmueblePickerData[0]
+        VGSI.proximidadUrbana = Double(1)
+        VGSI.tipoInmuebles = Double(1)
+        VGSI.claseInmueble = Double(1)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -256,15 +264,18 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         switch (component) {
         case 0:
             print(proximidadUrbanaPickerData[row])
-            ValoresGlobales.sharedInstance.proximidadUrbana = Double(row)
+            VGSI.proximidadUrbana = Double(row + 1)
+            VGSI.nombreProximidadUrbana = proximidadUrbanaPickerData[row]
             break
         case 1:
             print(tipoInmueblePickerData[row])
-            ValoresGlobales.sharedInstance.tipoInmuebles = Double(row)
+            VGSI.tipoInmuebles = Double(row + 1)
+            VGSI.nombreTipologia = tipoInmueblePickerData[row]
             break
         case 2:
             print(claseInmueblePickerData[row])
-            ValoresGlobales.sharedInstance.claseInmueble = Double(row)
+            VGSI.claseInmueble = Double(row + 1)
+            VGSI.nombreClaseInmueble = claseInmueblePickerData[row]
             break
         default:
             print("error")
@@ -319,7 +330,7 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
             let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as String
             //let destinationPath = documentDirectoryPath.URLByAppendingPathComponent("contacts1.db")
             let fotoPath = documentDirectoryPath + "/Propiedades/" + filename
-            ValoresGlobales.sharedInstance.photoPath = fotoPath
+            VGSI.photoPath = fotoPath
             print("Paths: \(fotoPath)")
             UIImageJPEGRepresentation(fotoPropiedad.image!, 1.0)!.writeToFile(fotoPath, atomically: true)
             // Retrieve image from file
@@ -351,8 +362,8 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         let ubicacion = locations.last
         self.count += 1
         print ("self.count \(self.count)")
-        ValoresGlobales.sharedInstance.latitud = ubicacion!.coordinate.latitude
-        ValoresGlobales.sharedInstance.longitud = ubicacion!.coordinate.longitude
+        VGSI.latitud = ubicacion!.coordinate.latitude
+        VGSI.longitud = ubicacion!.coordinate.longitude
         print("Lat: " + "\(ubicacion!.coordinate.latitude)")
         print("Lon: " + "\(ubicacion!.coordinate.longitude)")
         latitud.font = UIFont(name: "Times New Roman", size: 18.0)

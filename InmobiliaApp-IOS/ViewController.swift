@@ -12,6 +12,8 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+    
+    var go:Bool = true
 
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var botonLogin: FBSDKLoginButton!
@@ -25,9 +27,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     var mediaSelected = ""
     
     override func viewDidLoad() {
-        print("View did load")
+        print("-->  Facebook View did load")
         super.viewDidLoad()
         
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        print("-->  Facebook login viewWilAppear")
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             print("AccessToken distinto de nil")
@@ -102,8 +109,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 if let verified : CFBoolean = (result.valueForKey("verified") as! CFBoolean) {
                     print("Verified: \(verified)")
                 }
-                
-                self.performSegueWithIdentifier("PasemosAlMapaMenu", sender: self)
+                if self.go {
+                    self.performSegueWithIdentifier("PasemosAlMapaMenu", sender: self)
+                }
             }
             print("Termina Call back")
         })

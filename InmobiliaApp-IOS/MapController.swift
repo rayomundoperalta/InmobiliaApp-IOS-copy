@@ -63,18 +63,33 @@ class MapController: UITableViewController, CLLocationManagerDelegate, MKMapView
         mapView.delegate = self
         
         // veamos cuantas propiedades hay en la base de datos
-        
+        var propiedades:[Propiedades]?
         let managedContext = CoreDataStack.sharedInstance.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Propiedades")
         do {
             let results = try managedContext.executeFetchRequest(fetchRequest)
             propiedades = results as! [Propiedades]
-            print("--> \(propiedades.count) propiedades en el catalogo")
+            print("--> \(propiedades!.count) propiedades en el catalogo")
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        if propiedades.count > 0 {
-            for var prop:Propiedades in propiedades {
+        
+        /* Lineas usadas para saber de que tamaño es un diez milesima de grado */
+        let offset: Double = 0.0001
+        let ubicacion0:CLLocation = CLLocation(latitude: 0.0, longitude: 0.0)
+        let ubicacion1:CLLocation = CLLocation(latitude: offset, longitude: offset)
+        let dist = ubicacion0.distanceFromLocation(ubicacion1)
+        print("tamaño de offset \(dist) metros")
+        /* ------------------------------------------------------------------- */
+        
+        let losPines = self.mapView.annotations
+        self.mapView.removeAnnotations(losPines)
+        if propiedades!.count > 0 {
+            let center:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0 , longitude: 0.0)
+            let region: MKCoordinateRegion = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
+            self.mapView.setRegion(region, animated: true)
+            
+            for prop in propiedades! {
                 print("\(prop.direccion!) - \(prop.latitud!), \(prop.longitud!) - \(prop.id!)")
                 let ubicacion:CLLocation = CLLocation(latitude: prop.latitud as! Double, longitude: prop.longitud as! Double)
                 self.colocarMapa(ubicacion, conPropiedad: prop)
@@ -122,21 +137,33 @@ class MapController: UITableViewController, CLLocationManagerDelegate, MKMapView
         self.mapView.setRegion(region, animated: true)
         let losPines = self.mapView.annotations
         self.mapView.removeAnnotations(losPines)
-        let elPin = ElPin(title: "Ud. Está aqui", subtitle: "¿qué propiedad quiere ver hoy?", coordinate: laCoordenada)
+        //let elPin = ElPin(title: "Ud. Está aqui", subtitle: "¿qué propiedad quiere ver hoy?", coordinate: laCoordenada)
+        let elPin:ElPin = ElPin()
+        elPin.title = "Ud. Está aqui"
+        elPin.subtitle = "¿qué propiedad quiere ver hoy?"
+        elPin.coordinate = laCoordenada
         self.mapView.addAnnotation(elPin)
     }
     
     func colocarMapa(ubicacion:CLLocation, conPropiedad propiedad:Propiedades) {
-        print("colocarMapa con propiedad id")
+        print("colocarMapa con propiedad id lat \(ubicacion.coordinate.latitude) - \(ubicacion.coordinate.longitude)")
         let laCoordenada = ubicacion.coordinate
         let region = MKCoordinateRegionMakeWithDistance(laCoordenada, 100, 100)    // 1 Km de radio
         self.mapView.setRegion(region, animated: true)
         let losPines = self.mapView.annotations
-        self.mapView.removeAnnotations(losPines)
-        let elPin = ElPin(title: propiedad.direccion!, subtitle: propiedad.telefono!, coordinate: laCoordenada)
+        print("cuantas anotations \(losPines.count)")
+        //self.mapView.removeAnnotations(losPines)
+        //let elPin = ElPin(title: propiedad.direccion!, subtitle: propiedad.telefono!, coordinate: laCoordenada)
+        var elPin:ElPin = ElPin()
+        elPin.title = propiedad.direccion!
+        elPin.subtitle = propiedad.telefono!
+        elPin.coordinate = laCoordenada
         elPin.propiedad = propiedad
-        self.mapView.addAnnotation(elPin)
-
+        var annotationView:MKPinAnnotationView!
+        annotationView = MKPinAnnotationView(annotation: elPin, reuseIdentifier: "pin")
+        self.mapView.addAnnotation(annotationView.annotation!)
+        let losPines1 = self.mapView.annotations
+        print("cuantas anotations despues \(losPines1.count)")
     }
     
     override func didReceiveMemoryWarning() {
@@ -151,24 +178,24 @@ class MapController: UITableViewController, CLLocationManagerDelegate, MKMapView
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         print("-> mapView viewForAnnotation")
     
-        if annotation is MKUserLocation {
-            print("Recibimos un MKUserLocation")
-            //return nil so map view draws "blue dot" for standard user location
-            return nil
-        }
-        
         if annotation is ElPin {
             print("La annotation es un ElPin")
             
             let reuseId = "pin"
 
-            let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-        
-            pinView.canShowCallout = true
-            pinView.animatesDrop = true
-            pinView.pinTintColor = UIColor.blackColor()
+            var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+            if pinView == nil {
+                pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+                pinView!.canShowCallout = true
+            } else {
+                pinView!.annotation = annotation
+            }
+            
+            //pinView.animatesDrop = true
+            //pinView.pinTintColor = UIColor.blackColor()
             
             if (annotation as! ElPin).propiedad != nil {
+                print("-- La propiedad es diferente de nil")
                 let annotationPayLoad: String = (annotation as! ElPin).propiedad!.id!
                 print(annotationPayLoad)
                 let imageButton = UIButton()
@@ -177,7 +204,7 @@ class MapController: UITableViewController, CLLocationManagerDelegate, MKMapView
                 imageButton.backgroundColor = UIColor.redColor()
                 imageButton.setImage(UIImage(named: "menu"), forState: .Normal) // aaqui va la foto
                 
-                pinView.leftCalloutAccessoryView = imageButton
+                pinView!.leftCalloutAccessoryView = imageButton
 
                 
                 let detailButton = PropiedadDetailButton(type: UIButtonType.Custom) as PropiedadDetailButton
@@ -188,8 +215,9 @@ class MapController: UITableViewController, CLLocationManagerDelegate, MKMapView
                 detailButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
                 detailButton.propiedad = (annotation as! ElPin).propiedad!
         
-                pinView.rightCalloutAccessoryView = detailButton
+                pinView!.rightCalloutAccessoryView = detailButton
             }
+            print("regresamos el pinView")
             return pinView
         } else {
             return nil

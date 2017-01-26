@@ -6,5 +6,8 @@ target 'InmobiliaApp-IOS' do
   use_frameworks!
 
   pod "TPKeyboardAvoiding"
+  
+  # Pods for SwiftPayPal
+  pod 'PayPal-iOS-SDK'
 
 end

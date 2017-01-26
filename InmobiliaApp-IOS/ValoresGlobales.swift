@@ -43,5 +43,11 @@ class ValoresGlobales {
     var valorEstimado: Double = 0.0
     var desStn: Double = 0.0
     
+    var nombreClaseInmueble:String = ""
+    var nombreEntidad:String = ""
+    var nombreMunicipio:String = ""
+    var nombreProximidadUrbana:String = ""
+    var nombreTipologia:String = ""
+    
     private init() { }
 }

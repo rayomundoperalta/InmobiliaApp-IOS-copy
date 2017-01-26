@@ -13,6 +13,8 @@ class MunicipiosTableViewController: UITableViewController {
     var estadoSeleccionado: String = ""
     
     var listaMunicipios: [String] = []
+    
+    var VGSI = ValoresGlobales.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +53,7 @@ class MunicipiosTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Municipio seleccionado \(listaMunicipios[indexPath.row])")
+        VGSI.nombreMunicipio = listaMunicipios[indexPath.row]
         municipioSeleccionado = listaMunicipios[indexPath.row]
         claveDeMunicipioSeleccionado = CatalogoEstadosMunicipios.sharedInstance.catalogoEdosMun[estadoSeleccionado]![municipioSeleccionado]!
         print("Clave del municipio seleccionado \(claveDeMunicipioSeleccionado)")

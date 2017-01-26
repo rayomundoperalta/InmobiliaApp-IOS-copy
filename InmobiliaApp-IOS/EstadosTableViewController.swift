@@ -13,6 +13,7 @@ class EstadosTableViewController: UITableViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     let estados = CatalogoEstadosMunicipios.sharedInstance.catalogoEdosMun.keys.sort(<)
+    let VGSI = ValoresGlobales.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class EstadosTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Estado seleccionado \(estados[indexPath.row])")
+        VGSI.nombreEntidad = estados[indexPath.row]
         estadoSeleccionado = estados[indexPath.row]
         self.performSegueWithIdentifier("PasemosASelecciónDeMunicipios", sender: self)
     }
