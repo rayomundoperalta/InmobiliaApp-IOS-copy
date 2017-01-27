@@ -30,8 +30,6 @@
 		76760D181E31565C005F7204 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D171E31565C005F7204 /* CoreDataStack.swift */; };
 		76760D211E318866005F7204 /* Estimaciones+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D1B1E318866005F7204 /* Estimaciones+CoreDataProperties.swift */; };
 		76760D221E318866005F7204 /* Estimaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D1C1E318866005F7204 /* Estimaciones.swift */; };
-		76760D231E318866005F7204 /* EstimacionesCompradas+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D1D1E318866005F7204 /* EstimacionesCompradas+CoreDataProperties.swift */; };
-		76760D241E318866005F7204 /* EstimacionesCompradas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D1E1E318866005F7204 /* EstimacionesCompradas.swift */; };
 		76760D261E33BE2B005F7204 /* PropiedadDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D251E33BE2A005F7204 /* PropiedadDetailButton.swift */; };
 		76760D2A1E33E408005F7204 /* PropertyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760D291E33E408005F7204 /* PropertyDetailViewController.swift */; };
 		76760DA31E36DB81005F7204 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76760D9A1E36DB81005F7204 /* Accelerate.framework */; };
@@ -46,6 +44,8 @@
 		76760DAD1E36DD46005F7204 /* PayPalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760DAC1E36DD46005F7204 /* PayPalViewController.swift */; };
 		767C36F61E39C49C008136AB /* Propiedades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C36F51E39C49C008136AB /* Propiedades.swift */; };
 		767C36F81E39C4A3008136AB /* Propiedades+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C36F71E39C4A3008136AB /* Propiedades+CoreDataProperties.swift */; };
+		768C85071E3AD0CF006D691E /* EstimacionesCompradas+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C85051E3AD0CF006D691E /* EstimacionesCompradas+CoreDataProperties.swift */; };
+		768C85081E3AD0CF006D691E /* EstimacionesCompradas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C85061E3AD0CF006D691E /* EstimacionesCompradas.swift */; };
 		7690BBD11E1DF52A000F4F77 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD01E1DF52A000F4F77 /* MenuController.swift */; };
 		7690BBD61E1EA9CE000F4F77 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD51E1EA9CE000F4F77 /* SWRevealViewController.m */; };
 		7690BBD81E1EB52C000F4F77 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7690BBD71E1EB52C000F4F77 /* MapController.swift */; };
@@ -81,8 +81,6 @@
 		76760D171E31565C005F7204 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		76760D1B1E318866005F7204 /* Estimaciones+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Estimaciones+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		76760D1C1E318866005F7204 /* Estimaciones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estimaciones.swift; sourceTree = "<group>"; };
-		76760D1D1E318866005F7204 /* EstimacionesCompradas+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EstimacionesCompradas+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		76760D1E1E318866005F7204 /* EstimacionesCompradas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimacionesCompradas.swift; sourceTree = "<group>"; };
 		76760D251E33BE2A005F7204 /* PropiedadDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropiedadDetailButton.swift; sourceTree = "<group>"; };
 		76760D291E33E408005F7204 /* PropertyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyDetailViewController.swift; sourceTree = "<group>"; };
 		76760D981E36D314005F7204 /* InmobiliaApp-IOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InmobiliaApp-IOS-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -99,6 +97,8 @@
 		76760DAC1E36DD46005F7204 /* PayPalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayPalViewController.swift; sourceTree = "<group>"; };
 		767C36F51E39C49C008136AB /* Propiedades.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Propiedades.swift; sourceTree = "<group>"; };
 		767C36F71E39C4A3008136AB /* Propiedades+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Propiedades+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		768C85051E3AD0CF006D691E /* EstimacionesCompradas+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EstimacionesCompradas+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		768C85061E3AD0CF006D691E /* EstimacionesCompradas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimacionesCompradas.swift; sourceTree = "<group>"; };
 		7690BBD01E1DF52A000F4F77 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		7690BBD41E1EA9CE000F4F77 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		7690BBD51E1EA9CE000F4F77 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -183,12 +183,12 @@
 		7646E90E1E133E3400FC4FB7 /* InmobiliaApp-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				768C85051E3AD0CF006D691E /* EstimacionesCompradas+CoreDataProperties.swift */,
+				768C85061E3AD0CF006D691E /* EstimacionesCompradas.swift */,
 				767C36F71E39C4A3008136AB /* Propiedades+CoreDataProperties.swift */,
 				767C36F51E39C49C008136AB /* Propiedades.swift */,
 				76760D1B1E318866005F7204 /* Estimaciones+CoreDataProperties.swift */,
 				76760D1C1E318866005F7204 /* Estimaciones.swift */,
-				76760D1D1E318866005F7204 /* EstimacionesCompradas+CoreDataProperties.swift */,
-				76760D1E1E318866005F7204 /* EstimacionesCompradas.swift */,
 				76760D0F1E309DC1005F7204 /* ConnectionManager.swift */,
 				7690BBD91E1EB81A000F4F77 /* ElPin.swift */,
 				7690BBD21E1EA991000F4F77 /* SWRevealViewController */,
@@ -371,6 +371,7 @@
 				76760C5C1E1F49CB005F7204 /* EstadosTableViewController.swift in Sources */,
 				76E743621E3723EA00E5FAC8 /* SalirViewController.swift in Sources */,
 				76760D2A1E33E408005F7204 /* PropertyDetailViewController.swift in Sources */,
+				768C85081E3AD0CF006D691E /* EstimacionesCompradas.swift in Sources */,
 				7690BBD11E1DF52A000F4F77 /* MenuController.swift in Sources */,
 				76760D221E318866005F7204 /* Estimaciones.swift in Sources */,
 				76760D261E33BE2B005F7204 /* PropiedadDetailButton.swift in Sources */,
@@ -386,10 +387,9 @@
 				767C36F61E39C49C008136AB /* Propiedades.swift in Sources */,
 				7646E9261E1347B200FC4FB7 /* CatalogoEstadosMunicipios.swift in Sources */,
 				767C36F81E39C4A3008136AB /* Propiedades+CoreDataProperties.swift in Sources */,
+				768C85071E3AD0CF006D691E /* EstimacionesCompradas+CoreDataProperties.swift in Sources */,
 				7690BBD81E1EB52C000F4F77 /* MapController.swift in Sources */,
-				76760D241E318866005F7204 /* EstimacionesCompradas.swift in Sources */,
 				76760CD51E26B50B005F7204 /* CapturaDeDatosNumericosViewController.swift in Sources */,
-				76760D231E318866005F7204 /* EstimacionesCompradas+CoreDataProperties.swift in Sources */,
 				76760C621E1F664C005F7204 /* MunicipioTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

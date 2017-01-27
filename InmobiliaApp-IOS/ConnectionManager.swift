@@ -5,6 +5,9 @@
 //  Created by Infraestructura on 21/10/16.
 //  Copyright © 2016 JanZelaznog. All rights reserved.
 //
+//
+//    NO FUNCIONA CON AL CONEXIÓN CELULAR DE TELCEL OJO OJO OJO
+//
 
 import Foundation
 import SystemConfiguration

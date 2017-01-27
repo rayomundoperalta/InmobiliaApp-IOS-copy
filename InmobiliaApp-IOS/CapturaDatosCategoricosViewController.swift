@@ -90,15 +90,53 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
         let laURL = NSURL(string: urlString)!
         let elRequest = NSURLRequest(URL: laURL)
         self.datosRecibidos = NSMutableData(capacity: 0)
-        self.conexion = NSURLConnection(request: elRequest, delegate: self)
-            
-        if self.conexion == nil {
-            self.datosRecibidos = nil
-            self.conexion = nil
-            print ("No se puede acceder al WS Avaluos")
-            reporteValorEstimado.attributedText = NSAttributedString(string: "No se puede acceder al WS", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
+        // se llama la rutina de estimación de valor siempre que tenga estimaciones disponibles
+        // hay que traer del sistema de persistencia el numero de peticiones restantes
+        var results:[Estimaciones]?
+        let managedContext = CoreDataStack.sharedInstance.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Estimaciones")
+        var registros:Int = 0
+        do {
+            results = try managedContext.executeFetchRequest(fetchRequest) as! [Estimaciones]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
         }
-        reporteValorEstimado.attributedText = NSAttributedString(string: "Petición enviada", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
+        var estimacionesRestantes:Int = 0
+        registros = results!.count
+        if registros > 0 {
+            print("tenemos registros, podemos tener estimaciones")
+            estimacionesRestantes = results![0].estimaciones as! Int
+        }
+        if (registros == 0) || (estimacionesRestantes <= 0) {
+            reporteValorEstimado.attributedText = NSAttributedString(string: "Es necesario comprar estimaciones", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
+        } else {
+            // actualizamos la base de datos para y luego hacemos el calculo
+            let entity = NSEntityDescription.entityForName("Estimaciones", inManagedObjectContext: managedContext)
+            estimacionesRestantes = estimacionesRestantes - 1
+            managedContext.deleteObject(results![0])
+            let estimaciones = Estimaciones(entity: entity!, insertIntoManagedObjectContext: managedContext)
+            print("Estimaciones restantes \(estimacionesRestantes)")
+            estimaciones.setValue(estimacionesRestantes, forKey: "estimaciones")
+            var go:Bool = true
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save \(error), \(error.userInfo)")
+                reporteValorEstimado.attributedText = NSAttributedString(string: "Core data error", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
+                go = false
+            }
+            if go {
+                self.conexion = NSURLConnection(request: elRequest, delegate: self)
+            
+                if self.conexion == nil {
+                    self.datosRecibidos = nil
+                    self.conexion = nil
+                    print ("No se puede acceder al WS Avaluos")
+                    reporteValorEstimado.attributedText = NSAttributedString(string: "No se puede acceder al WS", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
+                }
+                reporteValorEstimado.attributedText = NSAttributedString(string: "Petición enviada", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0, weight: UIFontWeightRegular)])
+            }
+        }
     }
     
     
@@ -332,6 +370,7 @@ class CapturaDatosCategoricosViewController: UIViewController, UIPickerViewDeleg
             let fotoPath = documentDirectoryPath + "/Propiedades/" + filename
             VGSI.photoPath = fotoPath
             print("Paths: \(fotoPath)")
+            print("VGSI.photoPaths >\(VGSI.photoPath)<")
             UIImageJPEGRepresentation(fotoPropiedad.image!, 1.0)!.writeToFile(fotoPath, atomically: true)
             // Retrieve image from file
             

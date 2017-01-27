@@ -29,8 +29,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         print("-->  Facebook View did load")
         super.viewDidLoad()
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,7 +57,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             botonLogin.delegate = self
             ImageView.hidden  = true
         }
-        print("Termina view did load")
+        
+        print("Termina view will appear")
     }
 
     override func didReceiveMemoryWarning() {

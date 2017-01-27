@@ -205,7 +205,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="507" id="UOr-ov-L06" customClass="MapTableViewCell" customModule="InmobiliaApp_IOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="507"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="507"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UOr-ov-L06" id="2il-5N-ihB">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="506"/>
@@ -493,6 +493,7 @@
                     <navigationItem key="navigationItem" title="Detalle de la propiedad" id="S5F-ll-4ZO" userLabel="Detalle de la propiedad"/>
                     <connections>
                         <outlet property="CPLabel" destination="xoC-Ss-xg7" id="Eav-Ea-u9A"/>
+                        <outlet property="btnCompartirOutlet" destination="W3L-N6-Bgh" id="Av4-ra-2m1"/>
                         <outlet property="claseInmuebleLabel" destination="Deg-Jx-MUb" id="HZl-cr-nAU"/>
                         <outlet property="direccionLabel" destination="WpX-Va-f4k" id="aMi-Jf-EM9"/>
                         <outlet property="entidadLabel" destination="kFM-hP-rgD" id="e4b-Tf-Qik"/>
@@ -1050,6 +1051,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gkb-GN-X5F"/>
-        <segue reference="9AK-U6-cAq"/>
+        <segue reference="8fE-Bz-jLW"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Social
 
 class PropertyDetailViewController: UIViewController {
     
@@ -30,6 +31,8 @@ class PropertyDetailViewController: UIViewController {
     @IBOutlet weak var latitudLabel: UILabel!
     @IBOutlet weak var CPLabel: UILabel!
     @IBOutlet weak var longitudLabel: UILabel!
+    @IBOutlet weak var btnCompartirOutlet: UIButton!
+    
     @IBAction func btnBorrar(sender: AnyObject) {
         let managedContext = CoreDataStack.sharedInstance.managedObjectContext
         
@@ -43,6 +46,59 @@ class PropertyDetailViewController: UIViewController {
     }
     
     @IBAction func btnCompartir(sender: AnyObject) {
+        print("boton compartir")
+        do {
+            let msg = "InmobiliaApp.peta.mx"
+            // Enviar un correo con la información del capturado
+            
+            let hayFeiz = SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook)
+            let hayTuit = SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter)
+            print("Hay Facebook \(hayFeiz)")
+            print("Hay Twiter \(hayTuit)")
+            // si existen las dos apps, consultar cual se usa
+            if hayFeiz && hayTuit {
+                let ac = UIAlertController(title: "Compartir", message: "Compartir la propiedad", preferredStyle: .Alert)
+                let btnFeiz = UIAlertAction(title: "Facebook", style:.Default, handler: {(UIAlertAction) in let feizbuc = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                    feizbuc.setInitialText(msg)
+                    //let photoFileName = self.propiedad!.photoFileName!
+                    //feizbuc.addImage(UIImage(contentsOfFile: photoFileName))
+                    self.presentViewController(feizbuc, animated: true, completion: {
+                        self.navigationController?.popViewControllerAnimated(true)})
+                })
+                let btnTuit = UIAlertAction(title: "Twitter", style: .Default, handler: { (UIAlertAction) in
+                    let tuiter = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                    tuiter.setInitialText(msg)
+                    // tuiter.addImage(laFoto!)
+                    self.presentViewController(tuiter, animated: true, completion: {
+                        self.navigationController?.popViewControllerAnimated(true)})
+                })
+                let btnOtro = UIAlertAction(title: "Otro", style: .Default, handler: { (UIAlertAction) in
+                    let items:Array<AnyObject> = [msg]
+                    let avc = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                    // esto solo es necesario para el caso del correo
+                    avc.setValue("Encontre casa", forKey:"Subject") // jan.zelaznog@gmail.com
+                    // vamos a detectar si vemos un ipad o no para arreglar el despliegue
+                    // implementar la presentación apropiada para el control ActivityViewControler
+                    if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+                        self.presentViewController(avc, animated: true, completion: {
+                            self.navigationController?.popViewControllerAnimated(true)})
+                    } else {
+                        let popover = UIPopoverController(contentViewController: avc)
+                        popover.presentPopoverFromRect(self.btnCompartirOutlet.frame, inView: self.view, permittedArrowDirections: .Any, animated: true)
+                    }
+                })
+                let btnNoCompartir = UIAlertAction(title: "No compartir", style: .Default, handler: { (UIAlertAction) in
+                    self.navigationController?.popViewControllerAnimated(true)})
+                ac.addAction(btnFeiz)
+                ac.addAction(btnTuit)
+                ac.addAction(btnOtro)
+                ac.addAction(btnNoCompartir)
+                print("mostramos el view controler")
+                self.presentViewController(ac, animated: true, completion: nil)
+            }
+        }
+        catch {print("Error al salvar la BD") }
+
     }
     
     override func viewDidLoad() {
@@ -55,8 +111,9 @@ class PropertyDetailViewController: UIViewController {
         print("\(propiedad!.entidad!) entidad")
         print("\(propiedad!.direccion!) direccion")
         print("\(propiedad!.telefono!) telefono")
+        print(">\(propiedad!.photoFileName!)< photo file name")
         
-        imagenPropiedad.image = UIImage(contentsOfFile: (propiedad!.photoFileName)!)
+        imagenPropiedad.image = UIImage(contentsOfFile: (propiedad!.photoFileName!))
         direccionLabel.text = propiedad!.direccion
         telefonoLabel.text = propiedad!.telefono
         municipioLabel.text = "\(propiedad!.nombreMunicipio!)"
@@ -79,9 +136,6 @@ class PropertyDetailViewController: UIViewController {
         claseInmuebleLabel.text = propiedad!.nombreClaseInmueble!
         latitudLabel.text = "Lat \(propiedad!.latitud!)"
         longitudLabel.text = "Lon \(propiedad!.longitud!)"
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
