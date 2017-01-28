@@ -198,12 +198,13 @@ class MapController: UITableViewController, CLLocationManagerDelegate, MKMapView
                 print("-- La propiedad es diferente de nil")
                 let annotationPayLoad: String = (annotation as! ElPin).propiedad!.id!
                 print(annotationPayLoad)
+                let photoFileName = (annotation as! ElPin).propiedad?.photoFileName
+                print("Imagen para annotation \(photoFileName)")
                 let imageButton = UIButton()
-                imageButton.frame.size.width = 44
-                imageButton.frame.size.height = 44
+                imageButton.frame.size.width = 80
+                imageButton.frame.size.height = 80
                 imageButton.backgroundColor = UIColor.redColor()
-                imageButton.setImage(UIImage(named: "menu"), forState: .Normal) // aaqui va la foto
-                
+                imageButton.setImage(UIImage(contentsOfFile: photoFileName!), forState: .Normal) // aaqui va la foto
                 pinView!.leftCalloutAccessoryView = imageButton
 
                 
